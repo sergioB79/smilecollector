@@ -26,6 +26,36 @@
     .closing{font-family:var(--title);font-size:1.4rem!important;text-align:center;background:var(--yellow);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:1.25rem;margin:2rem 0}.sources{background:#f1efe6;border:2px dashed #7a756a;padding:1.2rem 1.4rem;margin-top:2.5rem}.sources h3{font-family:var(--title);font-size:1.05rem}.sources ul{padding-left:1.2rem}.sources li{margin:.5rem 0;font-size:.9rem}.sources a{color:#174d6f}.sources p{font-size:.86rem;color:#5d584d;margin:.8rem 0 0}.bottom-nav{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:2rem 0}
     footer{text-align:center;padding:3rem 1rem;font-family:var(--hand);font-size:1.5rem;background:var(--yellow);border:3px solid var(--ink);max-width:1050px;margin:0 auto}footer small{display:block;font-family:var(--type);font-size:.74rem;margin-top:1rem;color:#4b463b}
     @media(max-width:760px){header{position:relative;top:auto;flex-direction:column;padding:1rem}.article{padding:2rem 1.3rem}.article::before{font-size:.9rem;left:9px}.band-grid{grid-template-columns:1fr}}@media(max-width:480px){body{padding:10px}nav a{font-size:.78rem}.article{padding:1.8rem 1rem}}
+  
+
+/* MOBILE SAFETY PATCH — 2026-08-30 */
+html,body{max-width:100%;overflow-x:hidden}
+img,video,iframe,svg{max-width:100%;height:auto}
+pre,code{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+table{max-width:100%}
+
+@media(max-width:620px){
+  body{padding:8px!important}
+  header,footer,.page,.lab-container,section,.hero,.hero-card,.content-box,.manifesto,.article,.archive-card,.dossier-preview,.cheese-specimen{max-width:100%!important;min-width:0!important}
+  header{width:100%!important;margin-left:0!important;margin-right:0!important;padding-left:.8rem!important;padding-right:.8rem!important}
+  nav{max-width:100%!important;justify-content:center!important}
+  nav a,.btn,.back-btn,.open-dossier,.archive-open{max-width:100%!important;white-space:normal!important;text-align:center!important;overflow-wrap:anywhere!important}
+  .hero{padding-left:0!important;padding-right:0!important}
+  .hero h1{max-width:100%!important;font-size:clamp(1.85rem,9.4vw,2.55rem)!important;line-height:1!important;letter-spacing:-.035em!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important}
+  .hero h2,h2,h3{max-width:100%!important;overflow-wrap:anywhere!important}
+  .tagline,.hero .sub,.kicker{max-width:100%!important;padding-left:.4rem!important;padding-right:.4rem!important}
+  .hero-logo{max-width:min(88vw,310px)!important}
+  .hero-card,.content-box,.manifesto,.article,.archive-card,.dossier-preview{width:100%!important;padding-left:1rem!important;padding-right:1rem!important}
+  .article::before,.hero-card::before,.dossier-preview::before,.canon-seed::before,.lab-seed::before{max-width:calc(100% - 20px)!important;white-space:normal!important;line-height:1.05!important;overflow-wrap:anywhere!important}
+  .grid-3,.lab-callout,.article-registry,.artifact-grid,.card-evidence{grid-template-columns:minmax(0,1fr)!important}
+  .flip-card{width:100%!important;height:auto!important;aspect-ratio:650/430}
+  .flip-inner{width:100%!important;height:100%!important}
+  .file-card,.artifact,.protocol,.menu-card,.incident,.pairing,.assessment,.memo,.lab,.menu,.canon,.card-evidence{max-width:100%!important;min-width:0!important}
+  .archive-topline{flex-wrap:wrap!important}
+  table{display:block!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  .margin-note{display:none!important}
+}
+
   </style>
 </head>
 <body>

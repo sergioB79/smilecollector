@@ -97,6 +97,36 @@
     .archive-error code{font-family:var(--type)}
     @media(max-width:900px){.grid-3,.lab-callout,.article-registry{grid-template-columns:1fr}.margin-note{display:none}.content-box{padding:2rem}.hero-card{padding:2rem 1.4rem}header{padding:1rem}nav{justify-content:center}.flip-card{height:330px}}
     @media(max-width:620px){body{padding:10px}header{flex-direction:column}.logo img{height:46px}nav a{font-size:.8rem}.nav-note{display:none}section{padding:3.5rem 1%}.content-box{padding:1.5rem}.flip-card{height:240px}.hero-logo{max-width:310px}.grid-3{gap:1rem}}
+  
+
+/* MOBILE SAFETY PATCH — 2026-08-30 */
+html,body{max-width:100%;overflow-x:hidden}
+img,video,iframe,svg{max-width:100%;height:auto}
+pre,code{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+table{max-width:100%}
+
+@media(max-width:620px){
+  body{padding:8px!important}
+  header,footer,.page,.lab-container,section,.hero,.hero-card,.content-box,.manifesto,.article,.archive-card,.dossier-preview,.cheese-specimen{max-width:100%!important;min-width:0!important}
+  header{width:100%!important;margin-left:0!important;margin-right:0!important;padding-left:.8rem!important;padding-right:.8rem!important}
+  nav{max-width:100%!important;justify-content:center!important}
+  nav a,.btn,.back-btn,.open-dossier,.archive-open{max-width:100%!important;white-space:normal!important;text-align:center!important;overflow-wrap:anywhere!important}
+  .hero{padding-left:0!important;padding-right:0!important}
+  .hero h1{max-width:100%!important;font-size:clamp(1.85rem,9.4vw,2.55rem)!important;line-height:1!important;letter-spacing:-.035em!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important}
+  .hero h2,h2,h3{max-width:100%!important;overflow-wrap:anywhere!important}
+  .tagline,.hero .sub,.kicker{max-width:100%!important;padding-left:.4rem!important;padding-right:.4rem!important}
+  .hero-logo{max-width:min(88vw,310px)!important}
+  .hero-card,.content-box,.manifesto,.article,.archive-card,.dossier-preview{width:100%!important;padding-left:1rem!important;padding-right:1rem!important}
+  .article::before,.hero-card::before,.dossier-preview::before,.canon-seed::before,.lab-seed::before{max-width:calc(100% - 20px)!important;white-space:normal!important;line-height:1.05!important;overflow-wrap:anywhere!important}
+  .grid-3,.lab-callout,.article-registry,.artifact-grid,.card-evidence{grid-template-columns:minmax(0,1fr)!important}
+  .flip-card{width:100%!important;height:auto!important;aspect-ratio:650/430}
+  .flip-inner{width:100%!important;height:100%!important}
+  .file-card,.artifact,.protocol,.menu-card,.incident,.pairing,.assessment,.memo,.lab,.menu,.canon,.card-evidence{max-width:100%!important;min-width:0!important}
+  .archive-topline{flex-wrap:wrap!important}
+  table{display:block!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  .margin-note{display:none!important}
+}
+
   </style>
 </head>
 <body>
