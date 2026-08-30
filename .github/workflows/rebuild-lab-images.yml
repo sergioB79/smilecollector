@@ -1,0 +1,48 @@
+name: Rebuild Lab images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rebuild-lab-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Rebuild Cresselia image
+        shell: bash
+        run: |
+          cat assets/lab/cresselia-why.1.b64 assets/lab/cresselia-why.2.b64 assets/lab/cresselia-why.3.b64 \
+            | tr -d '\r\n' \
+            | base64 --decode > assets/lab/cresselia-why.webp
+          file assets/lab/cresselia-why.webp
+
+      - name: Rebuild Vitinho image
+        shell: bash
+        run: |
+          cat assets/lab/chunks/vitinho/01.txt assets/lab/chunks/vitinho/02.txt assets/lab/chunks/vitinho/03.txt \
+            | tr -d '\r\n' \
+            | base64 --decode > assets/lab/vitinho-route-215.jpg
+          file assets/lab/vitinho-route-215.jpg
+
+      - name: Commit rebuilt images
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/lab/cresselia-why.webp assets/lab/vitinho-route-215.jpg
+          if git diff --cached --quiet; then
+            echo 'Images already correct.'
+          else
+            git commit -m 'Rebuild Lab image assets'
+            git push
+          fi
