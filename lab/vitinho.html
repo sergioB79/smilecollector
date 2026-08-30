@@ -7,7 +7,7 @@
   <title>ARCHIVE LEAK #001 — O paradeiro do Vitinho | Smilecollector Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
   <style>
-    :root{--paper:#f7f3e8;--grid:#e2d9c2;--ink:#191919;--pink:#ff2a85;--blue:#00dcea;--yellow:#ffe600;--red:#b62424;--archive:#e9dfc2;--green:#395846;--hand:'Reenie Beanie',cursive;--title:'Permanent Marker',cursive;--type:'Special Elite',monospace}
+    :root{--paper:#f7f3e8;--grid:#e2d9c2;--ink:#191919;--pink:#ff2a85;--blue:#00dcea;--yellow:#ffe600;--red:#b62424;--archive:#e9dfc2;--hand:'Reenie Beanie',cursive;--title:'Permanent Marker',cursive;--type:'Special Elite',monospace}
     *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
     body{background-color:var(--paper);color:var(--ink);font-family:var(--type);line-height:1.68;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:25px 25px;padding:20px}
     header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 2rem;background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);margin:0 auto 3rem;max-width:1400px;position:sticky;top:10px;z-index:30}
@@ -19,9 +19,8 @@
     .article{background:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:3rem;position:relative}.article::before{content:"RECOVERED MATERIAL / ORIGIN: QUESTIONABLE";position:absolute;top:-18px;left:24px;background:var(--yellow);padding:.2rem .65rem;border:2px solid var(--ink);font-family:var(--hand);font-size:1.12rem;transform:rotate(-2deg)}
     .article p{font-size:1.08rem;margin-bottom:1.12rem}.article h2{font-family:var(--title);font-size:clamp(1.75rem,5vw,2.65rem);line-height:1.05;margin:2.7rem 0 .85rem}.dropcap:first-letter{font-family:var(--title);font-size:3.8rem;float:left;line-height:.72;margin:.15rem .45rem 0 0;color:var(--red)}
     .redacted{background:var(--ink);color:var(--ink);padding:0 .2rem;border-radius:1px}.redacted::selection{color:#fff}
-    .photo{margin:1.8rem auto 2.2rem;max-width:760px;background:#d9d1bd;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:1rem;transform:rotate(-.45deg)}
-    .photo-frame{height:310px;background:linear-gradient(145deg,#5b625b,#202421);border:8px solid #f6f1e5;position:relative;overflow:hidden;filter:grayscale(1)}
-    .photo-frame::before{content:"ROUTE 215 — 23:47";position:absolute;bottom:10px;right:14px;color:#fff;font-size:.78rem;background:#0009;padding:.25rem .45rem;z-index:2}.photo-frame::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,#ffffff0b 4px),radial-gradient(circle at 58% 60%,#d8d8d8 0 11px,transparent 12px),linear-gradient(90deg,transparent 55%,#b9b9b9 56% 58%,transparent 59%);opacity:.75}
+    .photo{margin:1.8rem auto 2.2rem;max-width:900px;background:#d9d1bd;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:1rem;transform:rotate(-.45deg)}
+    .leak-photo{display:block;width:100%;height:auto;border:8px solid #f6f1e5;image-rendering:auto}
     .photo-note{font-family:var(--hand);font-size:1.35rem;text-align:center;margin-top:.7rem;color:#7a2d2d}
     .memo{background:var(--archive);border:2px solid #746b55;box-shadow:4px 4px 0 var(--ink);padding:1.35rem 1.5rem;margin:1.5rem 0;position:relative;transform:rotate(.15deg)}.memo::before{content:"CONFIDENCIAL";position:absolute;right:18px;top:14px;font-family:var(--title);font-size:1rem;color:var(--red);border:3px solid var(--red);padding:.12rem .45rem;transform:rotate(8deg);opacity:.78}.memo strong{font-family:var(--title)}.memo ul{padding-left:1.25rem;margin-top:.7rem}.memo li{margin:.4rem 0}
     .team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.4rem 0}.mon{border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:1.15rem;background:#fbfaf5}.mon h3{font-family:var(--title);font-size:1.35rem;margin-bottom:.5rem}.mon p{font-size:1rem;margin:0}
@@ -31,7 +30,7 @@
     .closing{font-family:var(--title);font-size:1.45rem!important;text-align:center;background:var(--yellow);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:1.25rem;margin:2rem 0}
     .sources{background:#f1efe6;border:2px dashed #7a756a;padding:1.2rem 1.4rem;margin-top:2.5rem}.sources h3{font-family:var(--title);font-size:1.05rem}.sources ul{padding-left:1.2rem}.sources li{margin:.5rem 0;font-size:.9rem}.sources a{color:#174d6f}.sources p{font-size:.87rem;color:#5d584d;margin:.8rem 0 0}
     .bottom-nav{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:2rem 0}footer{text-align:center;padding:3rem 1rem;font-family:var(--hand);font-size:1.5rem;background:var(--yellow);border:3px solid var(--ink);max-width:1000px;margin:0 auto}footer small{display:block;font-family:var(--type);font-size:.74rem;margin-top:1rem;color:#4b463b}
-    @media(max-width:760px){header{position:relative;top:auto;flex-direction:column;padding:1rem}.article{padding:2rem 1.35rem}.article::before{font-size:.9rem;left:10px}.team-grid{grid-template-columns:1fr}.photo-frame{height:230px}}@media(max-width:480px){body{padding:10px}nav a{font-size:.78rem}.article{padding:1.8rem 1rem}.schedule .line{grid-template-columns:70px 1fr}}
+    @media(max-width:760px){header{position:relative;top:auto;flex-direction:column;padding:1rem}.article{padding:2rem 1.35rem}.article::before{font-size:.9rem;left:10px}.team-grid{grid-template-columns:1fr}}@media(max-width:480px){body{padding:10px}nav a{font-size:.78rem}.article{padding:1.8rem 1rem}.schedule .line{grid-template-columns:70px 1fr}}
   </style>
 </head>
 <body>
@@ -39,7 +38,6 @@
   <a class="logo" href="../index.html"><img src="../logo-smilecollector.png" alt="Smilecollector"></a>
   <nav><a href="../lab.html#dossiers">← Voltar aos Dossiers</a><a href="../lab.html">Pokémon Lab</a><a href="../index.html">Home</a><a href="https://sergiob79.github.io/my_pkm_binder/" target="_blank" rel="noopener">Binders ↗</a></nav>
 </header>
-
 <main class="page">
   <section class="hero">
     <span class="case-no">ARCHIVE LEAK #001</span>
@@ -47,20 +45,18 @@
     <p class="sub">Três décadas depois, uma fotografia miserável finalmente explica tudo.</p>
     <div class="legend"><span class="badge classified">CLASSIFIED</span><span class="badge archive">RECOVERED FILE</span><span class="badge warning">BEDTIME ENFORCEMENT: ACTIVE</span></div>
   </section>
-
   <article class="article">
     <p class="dropcap">O mistério que atormentava uma geração de portugueses chegou finalmente ao fim.</p>
     <p>Documentos recentemente desclassificados, três testemunhos pouco fiáveis e uma fotografia tirada à distância na Route 215 revelam aquilo que a RTP conseguiu esconder durante décadas:</p>
     <p><strong>o Vitinho não desapareceu.</strong></p>
     <p>Em meados dos anos 90, no auge da fama, abandonou discretamente os estúdios e partiu para Johto com um objectivo muito específico:</p>
     <p><strong>tornar-se treinador de Pokémon especializados em sono.</strong></p>
-    <p>A operação foi mantida em segredo absoluto.</p>
-    <p>E percebe-se porquê.</p>
+    <p>A operação foi mantida em segredo absoluto. E percebe-se porquê.</p>
     <p>Era difícil explicar às crianças portuguesas que o rapaz que todas as noites aparecia na televisão para as mandar deitar estava agora numa floresta estrangeira a ensinar um Hypno a fazer exactamente a mesma coisa, mas sem necessidade de autorização parental.</p>
 
     <div class="photo">
-      <div class="photo-frame"></div>
-      <div class="photo-note">[ ampliar não ajudou. ampliámos na mesma. ]</div>
+      <img class="leak-photo" src="../assets/lab/vitinho-route-215.jpg" alt="Suposta cópia de segurança mostrando o Vitinho na Route 215 com Pokémon nocturnos.">
+      <div class="photo-note">[ cópia de segurança — Route 215, data desconhecida ]</div>
     </div>
 
     <h2>01 — O desaparecimento</h2>
@@ -69,25 +65,12 @@
     <p>Foi imediatamente rejeitada pelo departamento de arquivos.</p>
     <p>Segundo documentação encontrada numa pasta marcada <span class="redacted">NÃO ABRIR DEPOIS DAS 21H</span>, Vitinho terá saído de Lisboa depois de uma divergência criativa com a estação.</p>
     <p>O assunto em disputa seria uma proposta de expansão internacional do projecto Boa Noite.</p>
-
-    <div class="memo">
-      <strong>MEMO RTP/94-SLEEP</strong>
-      <ul>
-        <li><strong>Destino proposto:</strong> Johto</li>
-        <li><strong>Objectivo:</strong> aperfeiçoamento de técnicas de indução do sono</li>
-        <li><strong>Equipamento levado:</strong> 1 barrete, 1 pijama, 3 cassetes, 17 Poké Balls</li>
-        <li><strong>Autorização da administração:</strong> não encontrada</li>
-        <li><strong>Explicação para as Poké Balls em Portugal em 1994:</strong> página arrancada</li>
-      </ul>
-    </div>
+    <div class="memo"><strong>MEMO RTP/94-SLEEP</strong><ul><li><strong>Destino proposto:</strong> Johto</li><li><strong>Objectivo:</strong> aperfeiçoamento de técnicas de indução do sono</li><li><strong>Equipamento levado:</strong> 1 barrete, 1 pijama, 3 cassetes, 17 Poké Balls</li><li><strong>Autorização da administração:</strong> não encontrada</li><li><strong>Explicação para as Poké Balls em Portugal em 1994:</strong> página arrancada</li></ul></div>
 
     <h2>02 — O Esquadrão da Caminha</h2>
     <p>Os primeiros registos atribuídos a Vitinho aparecem numa pequena competição nocturna nos arredores de Ecruteak.</p>
-    <p>A equipa inscrita era invulgar.</p>
-    <p>Não particularmente rápida.</p>
-    <p>Não particularmente simpática para quem tivesse planos depois das dez.</p>
+    <p>A equipa inscrita era invulgar. Não particularmente rápida. Não particularmente simpática para quem tivesse planos depois das dez.</p>
     <p>Segundo o relatório da organização, <strong>nenhum combate chegou ao fim acordado.</strong></p>
-
     <div class="team-grid">
       <div class="mon"><h3>Darkrai</h3><p>O ás da equipa. Vitinho terá passado anos a tentar reconverter pesadelos em “sono educativo”. Três adversários acordaram descansados. Um acordou a gritar. O relatório classificou a experiência como <strong>promissora</strong>.</p></div>
       <div class="mon"><h3>Hypno</h3><p>Substituiu o antigo ritual televisivo quase de imediato. O pêndulo funcionava fora do horário de emissão e não exigia intervalos publicitários.</p></div>
@@ -97,35 +80,14 @@
 
     <h2>03 — “O maior treinador que Kanto nunca conheceu”</h2>
     <p>Com o tempo começaram a circular relatos de uma pequena figura de pijama nas rotas de Johto, quase sempre depois da meia-noite.</p>
-
-    <div class="witness">
-      <p>“Desafiei-o para um combate.”</p>
-      <p>“Ele aceitou?”</p>
-      <p>“Não.”</p>
-      <p>“Então o que fez?”</p>
-      <p>“Perguntou-me a que horas me tinha levantado.”</p>
-      <p>“E depois?”</p>
-      <p>“Não sei. Acordei de manhã.”</p>
-      <div class="who">— Bird Keeper, identidade retida porque provavelmente também não existe</div>
-    </div>
-
+    <div class="witness"><p>“Desafiei-o para um combate.”</p><p>“Ele aceitou?”</p><p>“Não.”</p><p>“Então o que fez?”</p><p>“Perguntou-me a que horas me tinha levantado.”</p><p>“E depois?”</p><p>“Não sei. Acordei de manhã.”</p><div class="who">— Bird Keeper, identidade retida porque provavelmente também não existe</div></div>
     <p>Outro treinador afirma ter visto Vitinho junto à Old Chateau a discutir com um Gengar.</p>
-    <p>Não conseguimos confirmar o conteúdo da conversa.</p>
-    <p>Mas segundo a testemunha, Vitinho repetia:</p>
+    <p>Não conseguimos confirmar o conteúdo da conversa. Mas segundo a testemunha, Vitinho repetia:</p>
     <div class="scribble">“Assustar antes de dormir é contraproducente.”</div>
 
     <h2>04 — O Método Vitinho</h2>
     <p>A certa altura isto deixou de parecer treino Pokémon e começou a parecer logística.</p>
-
-    <div class="schedule">
-      <div class="line"><strong>21:00</strong><span>Primeiro aviso.</span></div>
-      <div class="line"><strong>21:30</strong><span>Noctowl verifica actividade suspeita.</span></div>
-      <div class="line"><strong>22:00</strong><span>Hypno entra em circulação.</span></div>
-      <div class="line"><strong>22:30</strong><span>Musharna trata dos casos resistentes.</span></div>
-      <div class="line"><strong>23:00</strong><span>Darkrai fica de prevenção.</span></div>
-      <div class="line"><strong>00:00</strong><span>Já ninguém faz perguntas.</span></div>
-    </div>
-
+    <div class="schedule"><div class="line"><strong>21:00</strong><span>Primeiro aviso.</span></div><div class="line"><strong>21:30</strong><span>Noctowl verifica actividade suspeita.</span></div><div class="line"><strong>22:00</strong><span>Hypno entra em circulação.</span></div><div class="line"><strong>22:30</strong><span>Musharna trata dos casos resistentes.</span></div><div class="line"><strong>23:00</strong><span>Darkrai fica de prevenção.</span></div><div class="line"><strong>00:00</strong><span>Já ninguém faz perguntas.</span></div></div>
     <p>Há rumores de que Vitinho tentou sincronizar o pêndulo de Hypno com a antiga melodia do Boa Noite.</p>
     <p>A experiência terá sido suspensa depois de quatro adultos portugueses adormecerem simultaneamente num café em Goldenrod.</p>
     <p>O dono pediu indemnização.</p>
@@ -133,30 +95,14 @@
 
     <h2>05 — O último avistamento</h2>
     <p>A fotografia mais recente terá sido tirada em Sinnoh.</p>
-    <p>Pouca luz.</p>
-    <p>Muito grão.</p>
-    <p>Uma figura pequena no fundo da estrada.</p>
-    <p>Barrete comprido.</p>
-    <p>Noctowl pousado numa árvore.</p>
+    <p>Pouca luz. Muito grão. Uma figura pequena no fundo da estrada. Barrete comprido. Noctowl pousado numa árvore.</p>
     <p>A imagem não prova rigorosamente nada.</p>
     <p>Mas também ninguém conseguiu explicar porque razão todos os treinadores presentes disseram ter adormecido dez minutos depois.</p>
     <p>Hoje, Vitinho continua longe das câmaras. Sem entrevistas. Sem aparições públicas. Apenas histórias ocasionais entre treinadores que atravessam rotas depois das nove da noite.</p>
-
     <div class="closing">Se ouvires um chocalho ao longe e começares a sentir os olhos pesados, não corras.<br><br>Não vale a pena.<br><br>Já devias estar na cama.</div>
 
-    <section class="sources">
-      <h3>COISAS QUE EXISTEM MESMO</h3>
-      <ul>
-        <li><a href="https://arquivos.rtp.pt/conteudos/vitinho/" target="_blank" rel="noopener">RTP Arquivos — Vitinho</a></li>
-        <li><a href="https://www.pokemon.com/uk/pokedex/hypno" target="_blank" rel="noopener">Pokédex — Hypno</a></li>
-        <li><a href="https://www.pokemon.com/us/pokedex/darkrai" target="_blank" rel="noopener">Pokédex — Darkrai</a></li>
-        <li><a href="https://www.pokemon.com/us/pokedex/musharna" target="_blank" rel="noopener">Pokédex — Musharna</a></li>
-        <li><a href="https://www.pokemon.com/us/pokedex/noctowl" target="_blank" rel="noopener">Pokédex — Noctowl</a></li>
-      </ul>
-      <p>A ligação entre estes factos, a fuga para Johto e qualquer memo RTP/94-SLEEP foi recuperada de uma zona do Smilecollector Lab onde a documentação tende a piorar depois da meia-noite.</p>
-    </section>
+    <section class="sources"><h3>COISAS QUE EXISTEM MESMO</h3><ul><li><a href="https://arquivos.rtp.pt/conteudos/vitinho/" target="_blank" rel="noopener">RTP Arquivos — Vitinho</a></li><li><a href="https://www.pokemon.com/uk/pokedex/hypno" target="_blank" rel="noopener">Pokédex — Hypno</a></li><li><a href="https://www.pokemon.com/us/pokedex/darkrai" target="_blank" rel="noopener">Pokédex — Darkrai</a></li><li><a href="https://www.pokemon.com/us/pokedex/musharna" target="_blank" rel="noopener">Pokédex — Musharna</a></li><li><a href="https://www.pokemon.com/us/pokedex/noctowl" target="_blank" rel="noopener">Pokédex — Noctowl</a></li></ul><p>A ligação entre estes factos, a fuga para Johto e qualquer memo RTP/94-SLEEP foi recuperada de uma zona do Smilecollector Lab onde a documentação tende a piorar depois da meia-noite.</p></section>
   </article>
-
   <div class="bottom-nav"><a class="back-btn" href="../lab.html#dossiers">← Voltar aos Dossiers</a><a class="back-btn" href="../index.html">Ir para a Home →</a></div>
 </main>
 <footer><p>⚡ Smilecollector Lab — algumas coisas ficam mais verdadeiras se forem impressas em papel amarelado. ⚡</p><small>Projecto independente de fã. Pokémon e nomes relacionados pertencem aos respectivos titulares.</small></footer>
