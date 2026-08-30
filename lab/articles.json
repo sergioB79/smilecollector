@@ -83,13 +83,13 @@
       "number": "004",
       "slug": "moomoo-cheese",
       "url": "lab/moomoo-cheese.html",
-      "title": "The Moomoo Cheese Affair",
-      "subtitle": "O queijo existe. O Lab gostaria de retirar algumas declarações anteriores.",
-      "excerpt": "O Lab preparava-se para inventar Moomoo Cheese quando Vivid Voltage 156/185 apareceu na mesa. Depois descobrimos que Galar também já cozinhava com ele. Restou-nos inventar a burocracia.",
-      "canon_seed": "Moomoo Cheese existe em Sword & Shield como ingrediente de curry e no TCG como Vivid Voltage 156/185, onde cura 30 de dano de até dois Pokémon com Energia ligada.",
+      "title": "Moomoo Cheese",
+      "subtitle": "O segredo gastronómico que a PokéDex não quer que saibas",
+      "excerpt": "Miltank já tinha transformado leite em medicina. Depois Galar trouxe o queijo e Vivid Voltage decidiu que duas porções também curam Pokémon. O Lab tratou do mercado gourmet de Kalos, da sobrematuração e da burocracia láctea.",
+      "canon_seed": "Miltank produz leite altamente nutritivo; Moomoo Milk recupera 100 HP; Moomoo Cheese existe em Sword & Shield como ingrediente e no TCG como Vivid Voltage 156/185, onde cura 30 de dano de até dois Pokémon com Energia ligada.",
       "tags": ["FIELD VERIFIED", "CANON + CONSEQUÊNCIAS", "CULINARY INCIDENT"],
-      "status": "CHEESE STATUS: CANON. LAB STATUS: EMBARRASSED",
-      "subjects": ["Moomoo Cheese", "Moomoo Milk", "Vivid Voltage", "Galar"],
+      "status": "DAIRY RISK: UNASSESSED",
+      "subjects": ["Moomoo Cheese", "Moomoo Milk", "Miltank", "Galar", "Kalos"],
       "featured": true
     }
   ]
