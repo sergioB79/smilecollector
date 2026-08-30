@@ -1,0 +1,104 @@
+name: Mobile responsive fix
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mobile-responsive-fix.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add mobile safety CSS to all site pages
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          marker = '/* MOBILE SAFETY PATCH — 2026-08-30 */'
+          patch = r'''
+
+    /* MOBILE SAFETY PATCH — 2026-08-30 */
+    html,body{max-width:100%;overflow-x:hidden}
+    img,video,iframe,svg{max-width:100%;height:auto}
+    pre,code{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+    table{max-width:100%}
+
+    @media(max-width:620px){
+      body{padding:8px!important}
+      header,footer,.page,.lab-container,section,.hero,.hero-card,.content-box,.manifesto,.article,.archive-card,.dossier-preview,.cheese-specimen{max-width:100%!important;min-width:0!important}
+      header{width:100%!important;margin-left:0!important;margin-right:0!important;padding-left:.8rem!important;padding-right:.8rem!important}
+      nav{max-width:100%!important;justify-content:center!important}
+      nav a,.btn,.back-btn,.open-dossier,.archive-open{max-width:100%!important;white-space:normal!important;text-align:center!important;overflow-wrap:anywhere!important}
+
+      .hero{padding-left:0!important;padding-right:0!important}
+      .hero h1{
+        max-width:100%!important;
+        font-size:clamp(1.85rem,9.4vw,2.55rem)!important;
+        line-height:1!important;
+        letter-spacing:-.035em!important;
+        white-space:normal!important;
+        overflow-wrap:anywhere!important;
+        word-break:normal!important;
+      }
+      .hero h2,h2,h3{max-width:100%!important;overflow-wrap:anywhere!important}
+      .tagline,.hero .sub,.kicker{max-width:100%!important;padding-left:.4rem!important;padding-right:.4rem!important}
+      .hero-logo{max-width:min(88vw,310px)!important}
+
+      .hero-card,.content-box,.manifesto,.article,.archive-card,.dossier-preview{width:100%!important;padding-left:1rem!important;padding-right:1rem!important}
+      .article::before,.hero-card::before,.dossier-preview::before,.canon-seed::before,.lab-seed::before{
+        max-width:calc(100% - 20px)!important;
+        white-space:normal!important;
+        line-height:1.05!important;
+        overflow-wrap:anywhere!important;
+      }
+
+      .grid-3,.lab-callout,.article-registry,.artifact-grid,.card-evidence{grid-template-columns:minmax(0,1fr)!important}
+      .flip-card{width:100%!important;height:auto!important;aspect-ratio:650/430}
+      .flip-inner{width:100%!important;height:100%!important}
+      .file-card,.artifact,.protocol,.menu-card,.incident,.pairing,.assessment,.memo,.lab,.menu,.canon,.card-evidence{max-width:100%!important;min-width:0!important}
+      .archive-topline{flex-wrap:wrap!important}
+      table{display:block!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+      .margin-note{display:none!important}
+    }
+          '''
+
+          targets = [Path('index.html'), Path('lab.html'), *sorted(Path('lab').glob('*.html'))]
+          changed = []
+          for path in targets:
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding='utf-8')
+              if marker in text:
+                  continue
+              if '</style>' not in text:
+                  continue
+              text = text.replace('</style>', patch + '\n  </style>', 1)
+              path.write_text(text, encoding='utf-8')
+              changed.append(str(path))
+
+          print('Patched:', ', '.join(changed) if changed else 'nothing')
+          PY
+
+          # One-off helper: remove itself after applying the fix.
+          rm -f .github/workflows/mobile-responsive-fix.yml
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo 'No changes needed.'
+          else
+            git commit -m 'Fix mobile layout across Smilecollector site'
+            git push
+          fi
