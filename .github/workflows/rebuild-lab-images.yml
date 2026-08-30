@@ -18,22 +18,37 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Rebuild Cresselia image
+      - name: Rebuild image assets
         shell: bash
         run: |
-          : > assets/lab/cresselia-why.webp
-          for f in assets/lab/cresselia-why.1.b64 assets/lab/cresselia-why.2.b64 assets/lab/cresselia-why.3.b64; do
-            tr -d '\r\n' < "$f" | base64 --decode >> assets/lab/cresselia-why.webp
-          done
-          file assets/lab/cresselia-why.webp
+          python - <<'PY'
+          from pathlib import Path
+          import base64, re
 
-      - name: Rebuild Vitinho image
-        shell: bash
-        run: |
-          : > assets/lab/vitinho-route-215.jpg
-          for f in assets/lab/chunks/vitinho/01.txt assets/lab/chunks/vitinho/02.txt assets/lab/chunks/vitinho/03.txt; do
-            tr -d '\r\n' < "$f" | base64 --decode >> assets/lab/vitinho-route-215.jpg
-          done
+          def rebuild(parts, output):
+              text = ''.join(Path(p).read_text(encoding='utf-8', errors='ignore') for p in parts)
+              text = re.sub(r'[^A-Za-z0-9+/=]', '', text)
+              # If padding appears inside sliced source text, remove it and restore only at the end.
+              text = text.replace('=', '')
+              text += '=' * ((4 - len(text) % 4) % 4)
+              data = base64.b64decode(text, validate=False)
+              Path(output).write_bytes(data)
+              print(output, len(data), data[:12])
+
+          rebuild([
+              'assets/lab/cresselia-why.1.b64',
+              'assets/lab/cresselia-why.2.b64',
+              'assets/lab/cresselia-why.3.b64',
+          ], 'assets/lab/cresselia-why.webp')
+
+          rebuild([
+              'assets/lab/chunks/vitinho/01.txt',
+              'assets/lab/chunks/vitinho/02.txt',
+              'assets/lab/chunks/vitinho/03.txt',
+          ], 'assets/lab/vitinho-route-215.jpg')
+          PY
+
+          file assets/lab/cresselia-why.webp
           file assets/lab/vitinho-route-215.jpg
 
       - name: Commit rebuilt images
