@@ -1,0 +1,49 @@
+name: Ninovio line install
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ninovio-line-install.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Materialize image and update Lab
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import urllib.request, json, base64, os
+
+          req = urllib.request.Request(
+              'https://api.github.com/repos/sergioB79/smilecollector/git/blobs/df0d8fbf3c95bb0f4d178d5c8f9516f369160d37',
+              headers={'Authorization': f'Bearer {os.environ["GH_TOKEN"]}', 'Accept':'application/vnd.github+json'}
+          )
+          with urllib.request.urlopen(req) as r:
+              payload = json.load(r)
+          data = base64.b64decode(payload['content'])
+          out = Path('assets/lab/ninovio-line.jpg')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_bytes(data)
+
+          path = Path('lab.html')
+          text = path.read_text(encoding='utf-8')
+          old = '''    <p><strong>Ninovio é o Mateus.</strong> O sobrinho que, sem saber, começou esta confusão toda quando recebeu o primeiro booster e acabou por arrastar o tio para o buraco sem fundo dos binders, sleeves e cartas brilhantes.</p>\n    <p>Se a <strong>Edition 420</strong> é o tio transformado em Pokémon de bancada, o <strong>SPECIMEN FILE #014</strong> é o Mateus passado pelo mesmo filtro pouco responsável do Lab: curioso, concentrado e capaz de ficar horas a estudar cartas como se estivesse a decifrar documentação classificada.</p>\n    <p><strong>Classificação:</strong> The Knowledge-Seeker Pokémon. <strong>Estado de canon:</strong> inexistente. <strong>Comportamento observado:</strong> abre um livro para confirmar uma coisa simples, encontra uma nota de rodapé, desaparece durante quatro horas e regressa com sete novas perguntas.</p>'''
+          new = '''    <p><strong>Ninovio é o Mateus.</strong> O sobrinho que, sem saber, começou esta confusão toda quando recebeu o primeiro booster e acabou por arrastar o tio para o buraco sem fundo dos binders, sleeves e cartas brilhantes.</p>\n    <p>Se a <strong>Edition 420</strong> é o tio transformado em Pokémon de bancada, o <strong>SPECIMEN FILE #014</strong> é o Mateus passado pelo mesmo filtro pouco responsável do Lab: curioso, concentrado e capaz de ficar horas a estudar cartas como se estivesse a decifrar documentação classificada.</p>\n    <img class="single-img" src="assets/lab/ninovio-line.jpg" alt="Linha evolutiva Ninovio, Mentovio e Ninox — criação do Smilecollector Lab">\n    <p><strong>Linha evolutiva observada:</strong> Ninovio → Mentovio → Ninox.</p>\n    <p>O primeiro ainda abre um livro para confirmar uma coisa simples. O segundo já começou a catalogar binders inteiros e a detectar impressões duvidosas a quilómetros. No estágio final, Ninox deixou de procurar respostas e passou a construir sistemas inteiros para as encontrar — o que, segundo o tio, é exactamente o tipo de evolução que devia preocupar uma família.</p>\n    <p><strong>Classificação:</strong> The Knowledge-Seeker Pokémon. <strong>Estado de canon:</strong> inexistente. <strong>Comportamento observado:</strong> uma pergunta simples continua a gerar sete novas perguntas, mas agora há sleeves, filtros e documentação envolvida.</p>'''
+          if old not in text:
+              raise SystemExit('Expected Ninovio block not found')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
+          rm -f .github/workflows/ninovio-line-install.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Add Ninovio evolution line to Lab'
+          git push
