@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BEHAVIOURAL REPORT #001 — Plusle, Minun e os limites clínicos do apoio moral. Smilecollector Lab.">
+  <title>BEHAVIOURAL REPORT #001 — Plusle & Minun | Smilecollector Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f7f3e8;--grid:#e2d9c2;--ink:#191919;--pink:#ff2a85;--blue:#00dcea;--yellow:#ffe600;--green:#395846;--danger:#ffd5d5;--hand:'Reenie Beanie',cursive;--title:'Permanent Marker',cursive;--type:'Special Elite',monospace}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{background-color:var(--paper);color:var(--ink);font-family:var(--type);line-height:1.66;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:25px 25px;padding:20px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 2rem;background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);margin:0 auto 3rem;max-width:1400px;position:sticky;top:10px;z-index:30}
+    .logo img{height:50px;border:2px solid var(--ink);transform:rotate(-2deg);display:block}nav{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:flex-end}
+    nav a,.back-btn{font-family:var(--title);text-decoration:none;color:var(--ink);background:var(--yellow);padding:.28rem .65rem;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}nav a:hover,.back-btn:hover{background:var(--blue)}
+    .page{max-width:1000px;margin:0 auto 4rem}.hero{text-align:center;padding:2.4rem 1rem 1rem}.case-no{display:inline-block;background:var(--ink);color:#fff;font-family:var(--title);padding:.25rem .7rem;transform:rotate(-1deg);margin-bottom:1rem;letter-spacing:.05em}
+    .hero h1{font-family:var(--title);font-size:clamp(2.45rem,7.5vw,5.1rem);line-height:.94;text-transform:uppercase;text-shadow:4px 4px 0 var(--yellow)}.hero .sub{font-family:var(--hand);font-size:clamp(1.6rem,3vw,2.3rem);color:var(--pink);margin:1rem auto;transform:rotate(-1deg)}
+    .legend{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin:1rem 0 2rem}.badge{display:inline-block;font-family:var(--title);font-size:.72rem;padding:.25rem .5rem;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);background:#fff}.verified{background:#c8efc4}.made{background:#f7b7d2}.mixed{background:#bdeff2}.warning{background:#ffe78e}
+    .article{background:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:3rem;position:relative}.article::before{content:"BEHAVIOURAL OBSERVATION / DO NOT TRY TO FIX WITH MORE SPARKS";position:absolute;top:-18px;left:24px;background:var(--yellow);padding:.2rem .65rem;border:2px solid var(--ink);font-family:var(--hand);font-size:1.12rem;transform:rotate(-2deg)}
+    .article p{font-size:1.08rem;margin-bottom:1.12rem}.article h2{font-family:var(--title);font-size:clamp(1.75rem,5vw,2.6rem);line-height:1.05;margin:2.6rem 0 .8rem}.dropcap:first-letter{font-family:var(--title);font-size:3.8rem;float:left;line-height:.72;margin:.15rem .45rem 0 0;color:var(--pink)}
+    .canon-seed{background:#edf7e9;border:2px dashed var(--green);padding:1.35rem 1.4rem;margin:1.5rem 0 2rem;position:relative}.canon-seed::before{content:"FIELD VERIFIED — CANON SEED";font-family:var(--title);font-size:.74rem;background:#c8efc4;border:2px solid var(--ink);padding:.15rem .45rem;position:absolute;top:-14px;left:16px}.canon-seed p{margin:.25rem 0;font-size:1rem}
+    .assessment,.incident,.model{border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:1.25rem 1.35rem;margin:1.35rem 0}.assessment{background:#eef7f5}.incident{background:var(--danger)}.model{background:#fff6bd}.assessment strong,.incident strong,.model strong{font-family:var(--title)}
+    .spark-board{background:#151c18;color:#f6ffeb;border:4px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:1.5rem;margin:1.6rem 0;font-family:var(--type)}.spark-board .line{padding:.45rem 0;border-bottom:1px dashed #78907b}.spark-board .line:last-child{border-bottom:none}.spark{color:#ffe600;font-family:var(--title);letter-spacing:.1em}
+    .lab-note{background:#fff6bd;border:2px solid var(--ink);padding:1rem 1.2rem;margin:1.4rem 0;font-family:var(--hand);font-size:1.4rem;transform:rotate(-.4deg)}
+    .sources{background:#f1efe6;border:2px dashed #7a756a;padding:1.2rem 1.4rem;margin-top:2.5rem}.sources h3{font-family:var(--title);font-size:1.05rem}.sources ul{padding-left:1.2rem}.sources li{margin:.5rem 0;font-size:.92rem}.sources a{color:#174d6f}.lab-disclaimer{font-size:.92rem!important;color:#555044}
+    .bottom-nav{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:2rem 0}footer{text-align:center;padding:3rem 1rem;font-family:var(--hand);font-size:1.5rem;background:var(--yellow);border:3px solid var(--ink);max-width:1000px;margin:0 auto}footer small{display:block;font-family:var(--type);font-size:.74rem;margin-top:1rem;color:#4b463b}
+    @media(max-width:760px){header{position:relative;top:auto;flex-direction:column;padding:1rem}.article{padding:2rem 1.35rem}.article::before{font-size:.95rem;left:10px}}@media(max-width:480px){body{padding:10px}nav a{font-size:.78rem}.article{padding:1.8rem 1rem}}
+  </style>
+</head>
+<body>
+<header>
+  <a class="logo" href="../index.html"><img src="../logo-smilecollector.png" alt="Smilecollector"></a>
+  <nav><a href="../lab.html#dossiers">← Voltar aos Dossiers</a><a href="../lab.html">Pokémon Lab</a><a href="../index.html">Home</a><a href="https://sergiob79.github.io/my_pkm_binder/" target="_blank" rel="noopener">Binders ↗</a></nav>
+</header>
+<main class="page">
+  <section class="hero">
+    <span class="case-no">BEHAVIOURAL REPORT #001</span>
+    <h1>Com amigos assim, quem precisa de inimigos?</h1>
+    <p class="sub">Plusle, Minun e os limites clínicos do apoio moral.</p>
+    <div class="legend"><span class="badge verified">FIELD VERIFIED</span><span class="badge mixed">CANON + CONSEQUÊNCIAS</span><span class="badge warning">ELECTRICAL SAFETY: QUESTIONABLE</span></div>
+  </section>
+
+  <article class="article">
+    <p class="dropcap">Há Pokémon que ajudam os companheiros em combate. Chansey cura. Indeedee presta assistência. Plusle e Minun escolheram outra filosofia.</p>
+    <p><strong>Gritar mais alto.</strong></p>
+    <p>À primeira vista parecem a claque perfeita: dois roedores eléctricos de quarenta centímetros, um com sinais de mais nas bochechas, outro com sinais de menos, ambos classificados oficialmente como <em>Cheering Pokémon</em>.</p>
+    <p>Saltam. Fazem pompons de faíscas. Apoiam os amigos.</p>
+    <p>É adorável.</p>
+    <p>Depois lê-se a Pokédex.</p>
+    <p>E aparece um pequeno problema.</p>
+
+    <div class="canon-seed">
+      <p><strong>Plusle:</strong> cria faíscas e até provoca curto-circuitos no próprio corpo para celebrar o esforço dos companheiros; em <em>Sapphire</em>, se o parceiro perde, chora.</p>
+      <p><strong>Minun:</strong> a entrada de <em>Ruby</em> diz explicitamente que se preocupa mais em apoiar os parceiros do que com a própria segurança; quando eles estão em dificuldades, aumenta a quantidade de faíscas.</p>
+      <p><strong>Os dois:</strong> entradas oficiais também dizem que a exposição à electricidade de Plusle e Minun promove circulação sanguínea e relaxa músculos.</p>
+    </div>
+
+    <h2>01 — Plusle: o amigo que acredita em ti demasiado</h2>
+    <p>Plusle é o membro relativamente estável desta relação.</p>
+    <p>Isto precisa de contexto porque estamos a usar a palavra <strong>“estável”</strong> para descrever um animal que provoca deliberadamente pequenos curto-circuitos dentro do próprio corpo sempre que acha que fizeste um bom trabalho.</p>
+    <p>A entrada de <em>Ruby</em> transforma incentivo numa actividade eléctrica: esforço do colega, curto-circuito, crepitar de faíscas, alegria.</p>
+    <p>É o equivalente Pokémon daquele amigo que vai ver-te correr uma meia-maratona e aparece no quilómetro dezassete com um megafone, duas tochas e autorização de absolutamente ninguém.</p>
+    <p>Quando o parceiro perde, porém, <em>Sapphire</em> dá-lhe uma reacção surpreendentemente normal.</p>
+    <p>Plusle chora.</p>
+
+    <div class="assessment"><strong>AVALIAÇÃO DO LAB</strong><p style="margin-top:.6rem">Entusiasmo excessivo. Capacidade de luto preservada. Pode continuar a ser convidado para festas, desde que longe do quadro eléctrico.</p></div>
+
+    <h2>02 — Minun: não estamos a perder, ainda há electricidade</h2>
+    <p>Minun é onde a situação deixa de ser apenas entusiástica.</p>
+    <p>A Pokédex de <em>Ruby</em> diz que coloca o apoio aos companheiros acima da <strong>própria segurança</strong>.</p>
+    <p>Isto já deveria ter provocado uma reunião.</p>
+    <p>Não provocou.</p>
+    <p><em>Sapphire</em> acrescenta o mecanismo de escalada: se o parceiro estiver em dificuldades, Minun produz quantidades crescentes de faíscas. <em>Diamond</em> repete a lógica para amigos que estão a perder.</p>
+
+    <div class="spark-board">
+      <div class="line"><strong>Companheiro bem:</strong> <span class="spark">⚡⚡</span></div>
+      <div class="line"><strong>Companheiro em dificuldade:</strong> <span class="spark">⚡⚡⚡⚡</span></div>
+      <div class="line"><strong>Companheiro a perder:</strong> <span class="spark">⚡⚡⚡⚡⚡⚡</span></div>
+      <div class="line"><strong>Plano de desescalada:</strong> ficheiro não encontrado.</div>
+    </div>
+
+    <p>Não sabemos se isto lhe provoca dor física. A Pokédex não diz que Minun “se electrocuta até desmaiar”, portanto o Lab também não.</p>
+    <p>Sabemos apenas que a segurança própria vem depois do apoio aos outros.</p>
+    <p>O que é simultaneamente muito querido e o tipo de frase que costuma aparecer imediatamente antes de um relatório de acidente.</p>
+
+    <div class="incident"><strong>FIELD NOTE #001-A</strong><p style="margin-top:.6rem"><strong>Pergunta:</strong> quando devemos mandar Minun parar?</p><p><strong>Resposta:</strong> aparentemente nunca foi definido.</p><p><strong>Acção recomendada:</strong> definir.</p><p><strong>Responsável:</strong> por determinar.</p></div>
+
+    <h2>03 — A fisioterapia eléctrica é, incrivelmente, canon</h2>
+    <p>Foi aqui que esperávamos finalmente encontrar a parte inventada.</p>
+    <p>Não encontrámos.</p>
+    <p>A Pokédex actual de Minun diz que a exposição à electricidade de Minun e Plusle <strong>promove a circulação sanguínea e relaxa os músculos</strong>.</p>
+    <p>Portanto, em algum ponto da investigação científica Pokémon, alguém fez aproximadamente a seguinte pergunta:</p>
+    <div class="lab-note">E se pusermos os dois ratos eléctricos ao lado do paciente?</div>
+    <p>E obteve resultados suficientemente bons para a frase entrar na Pokédex.</p>
+    <p>O Smilecollector Lab gostaria de salientar que “relaxa os músculos” não significa “aplicar Thunderbolt a alguém com dores nas costas”.</p>
+    <p>Esta frase foi acrescentada depois de uma discussão interna.</p>
+
+    <h2>04 — O problema do feedback positivo</h2>
+    <p>Agora juntamos as peças.</p>
+    <p>Minun aumenta o apoio eléctrico quando a situação piora. Plusle responde ao esforço dos companheiros com demonstrações eléctricas. Os dois juntos produzem uma corrente com efeitos fisiológicos descritos pela própria Pokédex.</p>
+    <p>Não existe lore oficial dizendo que entram num ciclo infinito de electrocussão motivacional.</p>
+    <p>Portanto fizemos o que qualquer laboratório sério faria.</p>
+    <p><strong>Inventámos um modelo.</strong></p>
+
+    <div class="model"><strong>SMILECOLLECTOR LAB — CHEERING ESCALATION MODEL</strong>
+      <p style="margin-top:.7rem"><strong>Estado 1:</strong> Plusle e Minun: “Estamos a conseguir!” — ⚡⚡</p>
+      <p><strong>Estado 2:</strong> a equipa começa a perder. Minun: “MAIS APOIO.” — ⚡⚡⚡⚡</p>
+      <p><strong>Estado 3:</strong> Minun parece cansado. Plusle vê Minun a esforçar-se. Plusle: “MUITO BEM, MINUN!” — ⚡⚡⚡⚡⚡</p>
+      <p><strong>Estado 4:</strong> ninguém sabe quem está agora a apoiar quem.</p>
+      <p><strong>Estado 5:</strong> Mauville pergunta porque caiu a rede.</p>
+      <p><strong>STATUS:</strong> LAB-MADE · <strong>PROBABILIDADE:</strong> desconhecida · <strong>VALOR CÓMICO:</strong> estatisticamente significativo.</p>
+    </div>
+
+    <h2>05 — A amizade mais perigosamente saudável de Hoenn</h2>
+    <p>E aqui está a parte estranha.</p>
+    <p>Plusle e Minun não são agressivos. Não são sombrios. O problema é exactamente o contrário.</p>
+    <p><strong>Gostam demasiado dos amigos.</strong></p>
+    <p>Especialmente Minun.</p>
+    <p>Há muitos Pokémon cujo perigo vem da fome, territorialidade, veneno ou fogo. Minun consegue transformar <strong>apoio emocional</strong> num risco ocupacional.</p>
+    <p>É quase admirável.</p>
+    <p>Há apenas uma regra que qualquer treinador responsável devia estabelecer no primeiro dia:</p>
+    <div class="lab-note">Quando eu estiver a perder, não precisas de morrer comigo.</div>
+    <p>Minun provavelmente responderia produzindo mais faíscas.</p>
+
+    <div class="assessment"><strong>FINAL ASSESSMENT</strong><p style="margin-top:.6rem"><strong>Plusle:</strong> entusiasmo excessivo.</p><p><strong>Minun:</strong> apoio acima da própria segurança, devidamente documentado.</p><p><strong>Efeito combinado:</strong> circulação melhorada e músculos relaxados.</p><p><strong>Amizade:</strong> 10/10.</p><p><strong>Gestão de crise:</strong> 2/10.</p></div>
+
+    <div class="lab-note">CONCLUSÃO DO LAB: ter Plusle e Minun ao teu lado é como ter dois amigos a ver a tua casa arder. Um começa a chorar. O outro entra pela porta aos saltos com pompons eléctricos porque não quer que percas a motivação.</div>
+
+    <section class="sources">
+      <h3>CANON SEEDS USED IN THIS REPORT</h3>
+      <ul>
+        <li><a href="https://www.pokemon.com/uk/pokedex/plusle" target="_blank" rel="noopener">Pokémon.com — Plusle Pokédex</a>: curto-circuitos, faíscas e comportamento de claque.</li>
+        <li><a href="https://bulbapedia.bulbagarden.net/wiki/Plusle_(Pok%C3%A9mon)" target="_blank" rel="noopener">Bulbapedia — Plusle Pokédex entries</a>: entradas de Ruby/Sapphire, incluindo a reacção à derrota do parceiro.</li>
+        <li><a href="https://www.pokemon.com/uk/pokedex/minun" target="_blank" rel="noopener">Pokémon.com — Minun Pokédex</a>: electricidade combinada promove circulação e relaxa músculos.</li>
+        <li><a href="https://bulbapedia.bulbagarden.net/wiki/Minun" target="_blank" rel="noopener">Bulbapedia — Minun Pokédex entries</a>: segurança própria em segundo plano e aumento das faíscas quando o parceiro está em dificuldades.</li>
+      </ul>
+      <p class="lab-disclaimer"><strong>Everything involving regional blackouts, escalation models, insurance or numerical friendship ratings:</strong> produzido irresponsavelmente pelo Smilecollector Lab.</p>
+    </section>
+  </article>
+
+  <div class="bottom-nav"><a class="back-btn" href="../lab.html#dossiers">← Voltar ao arquivo</a><a class="back-btn" href="moomoo-cheese.html">Próximo desastre culinário →</a></div>
+</main>
+<footer><p>⚡ Smilecollector Lab — apoio emocional sujeito a limites de amperagem. ⚡</p><small>Projecto independente de fã. Pokémon e nomes relacionados pertencem aos respectivos titulares. Conteúdo LAB-MADE é ficção editorial.</small></footer>
+</body>
+</html>

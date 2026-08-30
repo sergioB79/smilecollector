@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smilecollector — caderno de campo, arquivo e laboratório de um colecionador Pokémon que começou por acidente e decidiu documentar as consequências.">
+  <title>Smilecollector — Sketchbook & Codex</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper:#f7f3e8; --grid:#e2d9c2; --ink:#191919; --pink:#ff2a85;
+      --blue:#00dcea; --yellow:#ffe600; --white:#fff; --muted:#6e685d;
+      --green:#4f6a4c; --hand:'Reenie Beanie',cursive;
+      --title:'Permanent Marker',cursive; --type:'Special Elite',monospace;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background-color:var(--paper);color:var(--ink);font-family:var(--type);line-height:1.62;
+      background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+      background-size:25px 25px;padding:20px;overflow-x:hidden;
+    }
+    a{color:inherit}
+    header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 2rem;background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);margin:0 auto 3rem;max-width:1400px;position:relative}
+    header::after{content:"⚠ NÃO TOCAR NAS CARTAS DO TIO";position:absolute;bottom:-22px;right:20px;font-family:var(--hand);font-size:1.15rem;color:var(--pink);background:#fff;padding:0 8px;border:1px dashed var(--pink);transform:rotate(-1deg)}
+    .logo img{height:52px;border:2px solid var(--ink);transform:rotate(-2deg);display:block}
+    nav{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    nav a,.nav-note{font-family:var(--title);text-decoration:none;font-size:.96rem;background:var(--yellow);padding:.25rem .6rem;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);transition:.1s}
+    nav a:hover{transform:translate(-2px,-2px);background:var(--blue)}
+    .nav-note{background:#fff;color:var(--muted);font-family:var(--hand);font-size:1.1rem;box-shadow:none;transform:rotate(2deg)}
+    section{padding:4.5rem 3%;min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;border-bottom:3px dashed var(--ink)}
+    .hero{text-align:center;min-height:82vh}
+    .hero-logo{max-width:520px;width:100%;height:auto;margin-bottom:1rem;filter:drop-shadow(6px 6px 0 rgba(0,0,0,.8));transform:rotate(1.5deg)}
+    .hero h1,h2{font-family:var(--title);text-transform:uppercase}
+    .hero h1{font-size:clamp(2.8rem,7vw,5.6rem);line-height:.95;text-shadow:4px 4px 0 var(--yellow);margin-bottom:.55rem}
+    .tagline{font-family:var(--hand);font-size:clamp(1.7rem,3.5vw,2.5rem);color:var(--pink);transform:rotate(-1.5deg);margin-bottom:1.8rem}
+    .hero-card,.content-box{background:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);width:100%;max-width:1150px;position:relative}
+    .hero-card{padding:2rem 2.2rem;margin-bottom:2rem;transform:rotate(.15deg);text-align:left;font-size:1.13rem}
+    .hero-card::before{content:"FIELD NOTE 000 — O ACIDENTE";position:absolute;top:-18px;left:24px;background:var(--yellow);border:2px solid var(--ink);padding:.15rem .65rem;font-family:var(--hand);font-size:1.25rem;transform:rotate(-2deg)}
+    .hero-card strong{font-family:var(--title)}
+    .cta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    .btn{font-family:var(--title);background:var(--blue);padding:.75rem 1.25rem;text-decoration:none;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:.1s;display:inline-block}
+    .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);background:var(--pink);color:white}
+    .btn.alt{background:var(--yellow)}
+    h2{font-size:clamp(2rem,5vw,3.2rem);text-align:center;margin-bottom:1.7rem;position:relative;text-shadow:3px 3px 0 var(--yellow)}
+    h2::after{content:"";position:absolute;left:8%;right:8%;bottom:-5px;height:5px;background:var(--pink);z-index:-1}
+    .content-box{padding:3rem;transform:rotate(.12deg)}
+    .content-box p{font-size:1.12rem;margin-bottom:1.2rem}
+    .dropcap:first-letter{font-family:var(--title);font-size:3.5rem;float:left;line-height:.8;padding:.14rem .4rem 0 0;color:var(--pink)}
+    .scribble{font-family:var(--hand);font-size:1.5rem;color:#b12626;display:block;margin:1.4rem 0;transform:rotate(-1deg)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1.6rem}
+    .file-card{border:2px solid var(--ink);padding:1.35rem;background:#fbfaf5;box-shadow:4px 4px 0 var(--ink);position:relative}
+    .file-card:nth-child(2){transform:rotate(-.5deg)} .file-card:nth-child(3){transform:rotate(.55deg)}
+    .file-card .stamp{display:inline-block;font-family:var(--title);font-size:.82rem;border:2px solid var(--ink);padding:.15rem .45rem;background:var(--yellow);margin-bottom:.75rem;transform:rotate(-2deg)}
+    .file-card h3{font-family:var(--title);font-size:1.35rem;margin-bottom:.6rem}
+    .file-card p{font-size:1rem;margin:0}
+    .rules{list-style:none;margin-top:1rem}
+    .rules li{padding:1rem 0 1rem 2rem;border-bottom:1px dashed #aaa;position:relative;font-size:1.08rem}
+    .rules li::before{content:"➜";position:absolute;left:0;color:var(--pink);font-weight:bold}
+    .rules strong{font-family:var(--title);font-size:1.08rem}
+    .aside-note{margin-top:1.5rem;background:var(--yellow);border:2px solid var(--ink);padding:1rem 1.2rem;font-family:var(--hand);font-size:1.4rem;transform:rotate(-.6deg)}
+    .lab-callout{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .lab-board{background:#16201a;color:#e9f2df;border:4px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:2rem;transform:rotate(-.4deg)}
+    .lab-board .chalk{font-family:var(--hand);font-size:1.45rem;color:#cde7bb;margin:.5rem 0}
+    .lab-board code{display:block;color:#fff;font-family:var(--type);margin:.75rem 0;white-space:normal}
+    .status-row{display:flex;gap:.55rem;flex-wrap:wrap;margin:1.2rem 0}
+    .status{font-family:var(--title);font-size:.78rem;padding:.28rem .55rem;border:2px solid var(--ink);background:#fff;box-shadow:2px 2px 0 var(--ink)}
+    .status.verified{background:#c9f0c2}.status.lab{background:#f5b3d0}.status.bad{background:#ffe78d}
+    .flip-wrap{display:flex;flex-direction:column;align-items:center;margin-top:2rem}
+    .flip-card{background:transparent;width:650px;max-width:100%;height:430px;perspective:1000px;cursor:pointer}
+    .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;box-shadow:10px 10px 0 var(--ink);border:3px solid var(--ink)}
+    .flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+    .flip-front,.flip-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+    .flip-front img,.flip-back img{width:100%;height:100%;object-fit:fill;display:block}
+    .flip-back{transform:rotateY(180deg)}
+    .card-hint{font-family:var(--hand);font-size:1.55rem;color:var(--pink);margin-top:1.4rem;background:#fff;padding:.35rem 1rem;border:2px dashed var(--pink)}
+    footer{text-align:center;padding:3rem 1rem;font-family:var(--hand);font-size:1.55rem;background:var(--yellow);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);max-width:1400px;margin:2rem auto 0}
+    .legal{font-family:var(--type);font-size:.75rem;display:block;margin-top:1rem;color:#4c463a}
+    .margin-note{position:absolute;font-family:var(--hand);font-size:1.45rem;color:#b12626;pointer-events:none;z-index:2}
+    .n1{top:6%;left:1.5%;transform:rotate(-8deg)} .n2{top:12%;right:2%;transform:rotate(6deg);color:#184d74}
+
+    /* --- ARTICLE REGISTRY: cards rendered from lab/articles.json --- */
+    .article-registry{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem;width:100%;margin-top:1.6rem}
+    .archive-card{background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:1.55rem;position:relative;transform:rotate(.08deg)}
+    .archive-card:nth-child(even){transform:rotate(-.3deg)}
+    .archive-topline{font-family:var(--title);font-size:.78rem;letter-spacing:.04em;border-bottom:2px dashed #aaa;padding-bottom:.45rem;margin-bottom:.8rem;color:#4d493f;display:flex;justify-content:space-between;gap:1rem}
+    .archive-card h3{font-family:var(--title);font-size:1.55rem;line-height:1.05;margin-bottom:.35rem}
+    .archive-subtitle{font-family:var(--hand);font-size:1.35rem!important;color:var(--pink);line-height:1.05;margin-bottom:.9rem!important}
+    .archive-badges{display:flex;gap:.42rem;flex-wrap:wrap;margin:.8rem 0 1rem}
+    .archive-badge{font-family:var(--title);font-size:.66rem;padding:.18rem .4rem;border:2px solid var(--ink);box-shadow:1px 1px 0 var(--ink);background:#fff}
+    .archive-badge.verified{background:#c9f0c2}.archive-badge.made{background:#f5b3d0}.archive-badge.mixed{background:#bdeff2}.archive-badge.warning{background:#ffe78d}
+    .archive-seed{font-size:.93rem!important;background:#eef5ea;border-left:4px solid #395846;padding:.75rem .85rem;margin:1rem 0!important}
+    .archive-subjects{font-size:.78rem!important;color:#6e685d;letter-spacing:.06em}
+    .archive-open{display:inline-block;margin-top:.8rem;font-family:var(--title);text-decoration:none;color:var(--ink);background:var(--yellow);padding:.48rem .72rem;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+    .archive-open:hover{background:var(--blue);transform:translate(-1px,-1px)}
+    .archive-empty,.archive-error{grid-column:1/-1;background:#fff;border:2px dashed var(--ink);padding:1rem 1.2rem}
+    .archive-error code{font-family:var(--type)}
+    @media(max-width:900px){.grid-3,.lab-callout,.article-registry{grid-template-columns:1fr}.margin-note{display:none}.content-box{padding:2rem}.hero-card{padding:2rem 1.4rem}header{padding:1rem}nav{justify-content:center}.flip-card{height:330px}}
+    @media(max-width:620px){body{padding:10px}header{flex-direction:column}.logo img{height:46px}nav a{font-size:.8rem}.nav-note{display:none}section{padding:3.5rem 1%}.content-box{padding:1.5rem}.flip-card{height:240px}.hero-logo{max-width:310px}.grid-3{gap:1rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#home" class="logo"><img src="logo-smilecollector.png" alt="Smilecollector"></a>
+    <nav>
+      <a href="#origem">O Acidente</a>
+      <a href="#grails">Grails</a>
+      <a href="#binders">Binders</a>
+      <a href="#regras">Regras da Casa</a>
+      <a href="lab.html">Pokémon Lab 🧪</a>
+      <a href="#contactos">Contacto</a>
+      <span class="nav-note">PT · EN em investigação</span>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <span class="margin-note n1">[ psst… olha o Psyduck ]</span>
+    <span class="margin-note n2">*não era suposto haver um laboratório*</span>
+    <img src="logo-smilecollector.png" alt="Smilecollector" class="hero-logo">
+    <h1>Smilecollector</h1>
+    <p class="tagline">Collecting smiles, one trade at a time.</p>
+    <div class="hero-card">
+      <p><strong>Isto não começou como uma colecção.</strong> Começou como uma prenda perfeitamente sensata para um sobrinho. Depois o sobrinho não apareceu, o booster ficou em casa e o tio descobriu duas coisas: que abrir pacotes sozinho é uma péssima ideia e que criaturas com dores de cabeça, expressão vazia ou velocidade de processamento duvidosa têm uma capacidade alarmante de ocupar espaço emocional.</p>
+      <p>O que ficou daqui não é bem uma loja, nem uma Pokédex, nem um blogue. É um <strong>caderno de campo</strong>: binders com critérios discutíveis, caçadas muito específicas, trocas entre pessoas e um laboratório onde factos oficiais são observados durante tempo suficiente para produzirem perguntas que ninguém responsável faria.</p>
+    </div>
+    <div class="cta">
+      <a class="btn" href="https://sergiob79.github.io/my_pkm_binder/" target="_blank" rel="noopener">📚 Abrir o Binder Archive</a>
+      <a class="btn alt" href="lab.html">🧪 Entrar no Lab</a>
+      <a class="btn alt" href="#grails">🎯 Ver o que falta</a>
+    </div>
+  </section>
+
+  <section id="origem">
+    <h2>O Acidente</h2>
+    <div class="content-box">
+      <p class="dropcap">Tudo começou em 2026 com uma ideia inocente: comprar um booster para o sobrinho, que tinha acabado a caderneta de cromos, e apresentar-lhe Pokémon. Era um plano simples, barato e familiar. Nenhuma destas três qualidades sobreviveu ao fim de semana.</p>
+      <p>O miúdo acabou por não vir. A caixa ficou. O tio fez aquilo que qualquer adulto equilibrado faria: viu horas de outras pessoas a abrirem pacotes na internet até deixar de existir qualquer hipótese realista de a caixa continuar fechada.</p>
+      <p>Abriu-a sozinho, sem saber nomes de raridades, sem conhecer os símbolos, sem perceber porque é que umas cartas brilhavam de maneira ligeiramente diferente das outras. Saiu uma carta dourada. Depois apareceu um Mega Darkrai ex que parecia menos impressionante do que outras cartas da pilha e acabou por ser precisamente a que obrigou a aprender rapidamente palavras como <em>SIR</em>, <em>chase</em>, <em>grading</em> e “não, não vou vender já”.</p>
+      <span class="scribble">[ nota posterior: era nesta altura que ainda achava que “vou comprar só mais uma box” era uma frase ]</span>
+      <p>Entretanto nasceu a parte boa. Quando o sobrinho aparece há sleeves, toploaders, binders e pequenos “packs do tio”. Há telefonemas discretos sobre Pikachus. Há cartas separadas porque alguém vai gostar delas mais do que o preço sugere.</p>
+      <p>Quando o sobrinho vai embora, infelizmente, a internet continua aberta.</p>
+    </div>
+  </section>
+
+  <section id="grails">
+    <h2>Três Casos Sem Cura Conhecida</h2>
+    <div class="content-box">
+      <p>Há colecções feitas por set, número, raridade ou investimento. Depois há esta. Aqui uma carta pode ganhar um lugar porque uma criatura parece finalmente ter cinco minutos de paz. O método não é particularmente científico. O Lab está a trabalhar nisso.</p>
+      <div class="grid-3">
+        <article class="file-card">
+          <span class="stamp">CASE FILE #054</span>
+          <h3>Psyduck na água</h3>
+          <p>O grail principal. Psyduck passa grande parte da existência a segurar a cabeça como quem acabou de descobrir que há obras no apartamento de cima. Ver uma ilustração em que simplesmente está na água, quieto, quase em paz, foi suficiente. A japonesa já entrou no arquivo. A inglesa continua sob perseguição activa.</p>
+        </article>
+        <article class="file-card">
+          <span class="stamp">CULTURAL OBJECT</span>
+          <h3>Pikachu × Van Gogh</h3>
+          <p>Um rato eléctrico com chapéu de feltro entrou numa conversa com a história da arte e ninguém achou necessário impedir. Excelente. É exactamente o tipo de colisão cultural que merece uma sleeve melhor do que a média.</p>
+        </article>
+        <article class="file-card">
+          <span class="stamp">FAMILY UNIT</span>
+          <h3>Slowpoke / Slowbro</h3>
+          <p>A escola filosófica do mínimo esforço. Não se sabe se estão profundamente tranquilos ou se ainda não receberam a informação de que existe um problema. Em ambos os casos, parece funcionar surpreendentemente bem.</p>
+        </article>
+      </div>
+      <div class="aside-note">Estado actual da investigação: ainda faltam cartas. Estranhamente, comprar cartas não parece reduzir a lista de cartas que faltam.</div>
+      <p style="text-align:center;margin-top:1.5rem"><a class="btn alt" href="https://www.pikawiz.com/lists/ea56-076c-9b71" target="_blank" rel="noopener">🎯 Consultar a lista de procurados</a></p>
+    </div>
+  </section>
+
+  <section id="binders">
+    <h2>O Binder Archive</h2>
+    <div class="content-box">
+      <p class="dropcap">A certa altura percebi que guardar cartas por número era eficiente, lógico e completamente incapaz de explicar porque é que algumas me faziam rir. Portanto fiz aquilo que qualquer pessoa razoável faria: abandonei o sistema e comecei a inventar categorias.</p>
+      <p>Os binders do Smilecollector não tentam completar sets. Tentam completar <strong>ideias</strong>. Cada um parte de uma pergunta, de uma sensação ou de um critério que provavelmente não sobreviveria a uma reunião séria de coleccionadores — e depois é levado demasiado a sério.</p>
+      <div class="grid-3">
+        <article class="file-card">
+          <span class="stamp">BINDER FILE #001</span>
+          <h3>The Confused Ones</h3>
+          <p>Psyduck, Slowpoke, Slowbro e companhia. Criaturas com ar de quem perdeu a primeira metade da reunião mas, contra todas as expectativas, continuam operacionais. O princípio científico é simples: <em>No thoughts. Big power.</em></p>
+        </article>
+        <article class="file-card">
+          <span class="stamp">BINDER FILE #002</span>
+          <h3>The Unsung Heroes</h3>
+          <p>Nem toda a gente recebe a chase card, a estátua ou o episódio especial. Algumas criaturas aparecem, resolvem o problema e voltam para o canto do binder sem uma única salva de palmas. Este arquivo é para elas.</p>
+        </article>
+        <article class="file-card">
+          <span class="stamp">ARCHIVE EXPANDING</span>
+          <h3>E os próximos...</h3>
+          <p>Sinnoh, criaturas comestíveis, excesso de fofura, coisas ligeiramente inquietantes e outros critérios que ainda aguardam classificação. O problema dos binders temáticos é que cada binder novo parece criar dois futuros.</p>
+        </article>
+      </div>
+      <span class="scribble">[ nota de campo: “acabado” é uma palavra que o Binder Archive utiliza apenas em sentido decorativo ]</span>
+      <div class="aside-note">Não é uma checklist. É mais parecido com uma pequena exposição montada por alguém que teve acesso a sleeves, tempo livre e critérios questionáveis.</div>
+      <p style="text-align:center;margin-top:1.6rem"><a class="btn" href="https://sergiob79.github.io/my_pkm_binder/" target="_blank" rel="noopener">📚 Abrir o Binder Archive ↗</a></p>
+    </div>
+  </section>
+
+  <section id="lab-preview">
+    <h2>O Pokémon Lab</h2>
+    <div class="content-box lab-callout">
+      <div>
+        <p class="dropcap">O problema de investigar Pokémon é que, mais cedo ou mais tarde, encontramos um facto perfeitamente oficial que não devia ser deixado sozinho com um adulto curioso.</p>
+        <p>No Lab, cada experiência começa com um <strong>CANON SEED</strong>: uma coisa verificável. A partir daí fazemos a pergunta desnecessária, seguimos a consequência lógica e, se tudo correr mal, terminamos com um dicionário Psyduck, um livro de receitas Farfetch’d ou uma espécie que nunca existiu.</p>
+        <div class="status-row">
+          <span class="status verified">FIELD VERIFIED</span>
+          <span class="status lab">LAB-MADE</span>
+          <span class="status bad">PROBABLY A BAD IDEA</span>
+        </div>
+        <p><strong>Regra única:</strong> podemos inventar o artefacto. Não podemos inventar o facto que o fez nascer.</p>
+        <p><a class="btn" href="lab.html">Abrir a porta do laboratório →</a></p>
+      </div>
+      <div class="lab-board">
+        <div class="chalk">SMILECOLLECTOR LAB — método operacional</div>
+        <code>CANON SEED</code>
+        <code>↓</code>
+        <code>PERGUNTA QUE NINGUÉM PEDIU</code>
+        <code>↓</code>
+        <code>CONSEQUÊNCIA LÓGICA</code>
+        <code>↓</code>
+        <code>ARTEFACTO DESNECESSARIAMENTE BEM DOCUMENTADO</code>
+        <div class="chalk">Professor Oak não respondeu ao último email.</div>
+      </div>
+    </div>
+
+    <div class="content-box" style="margin-top:2rem;max-width:1150px">
+      <span class="scribble">[ latest transmissions from the lab ]</span>
+      <h3 style="font-family:var(--title);font-size:1.7rem;margin-bottom:.5rem">LATEST FROM THE LAB</h3>
+      <p>Esta lista não está escrita à mão nesta página. A Home lê o arquivo central do Lab e mostra automaticamente os dossiers mais recentes. É menos romântico, mas evita esquecer links às três da manhã.</p>
+      <div class="article-registry" data-article-registry data-limit="2" data-compact="true"></div>
+      <p style="text-align:center;margin-top:1.4rem"><a class="btn alt" href="lab.html#dossiers">Ver todo o arquivo →</a></p>
+    </div>
+  </section>
+
+  <section id="regras">
+    <h2>Regras da Casa</h2>
+    <div class="content-box">
+      <p>Comprar, vender e trocar cartas é a parte menos romântica da colecção, portanto convém mantê-la simples antes que alguém invente mais uma taxa.</p>
+      <ul class="rules">
+        <li><strong>Pessoas primeiro, tabela depois.</strong> Cardmarket é uma referência útil, não uma entidade metafísica. Condição, edição, procura e valor sentimental também existem. Se uma troca deixa os dois lados satisfeitos, o Excel pode sobreviver ao trauma.</li>
+        <li><strong>Justo para quem compra e para quem vende.</strong> Não procuro “ganhar” uma troca escondendo informação. As cartas já conseguem ser confusas sem assistência humana.</li>
+        <li><strong>Por vezes trocar é mais fácil.</strong> Há cartas que valem mais para uma pessoa do que o número que aparece num gráfico. É precisamente aí que uma troca pode fazer mais sentido do que duas vendas e três portes.</li>
+        <li><strong>Envio rápido, seguro e proporcional.</strong> Uma carta não fica mais protegida por pagarmos portes que custam metade da carta. Embalar bem continua a ser mais útil do que fazer teatro logístico.</li>
+        <li><strong>Vinted: experiência concluída.</strong> Duas tentativas, duas histórias que começaram mal. O comité científico decidiu que a amostra era suficiente. O site foi removido do protocolo.</li>
+        <li><strong>Na dúvida, pergunta.</strong> Uma fotografia extra custa menos do que uma discussão depois. Se queres trocar, comprar, vender ou perceber o estado de uma carta, fala comigo.</li>
+      </ul>
+      <p style="text-align:center;margin-top:1.6rem"><a class="btn" href="https://www.cardmarket.com/en/Pokemon/Users/smilecollector" target="_blank" rel="noopener">Ver perfil no Cardmarket ↗</a></p>
+    </div>
+  </section>
+
+  <section id="contactos">
+    <h2>Identificação do Suspeito</h2>
+    <div class="content-box" style="text-align:center">
+      <p>Há um cartão de visita em formato TCG porque, aparentemente, imprimir “adulto funcional” num rectângulo normal já não era opção.</p>
+      <p>Clica para virar. As estatísticas no verso não foram auditadas por nenhuma organização séria.</p>
+      <div class="flip-wrap">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')" role="button" tabindex="0" aria-label="Virar cartão Smilecollector">
+          <div class="flip-inner">
+            <div class="flip-front"><img src="cartao_frente.png" alt="Cartão Smilecollector — frente"></div>
+            <div class="flip-back"><img src="cartao_verso.png" alt="Cartão Smilecollector — verso"></div>
+          </div>
+        </div>
+        <div class="card-hint">☝ frente ⇄ verso · efeitos secundários: querer fazer um também</div>
+      </div>
+      <p style="margin-top:2rem"><strong>Contacto directo:</strong> 📞 +351 910 407 585 &nbsp;·&nbsp; ✉️ sergiobatalha79@gmail.com</p>
+      <p><a href="https://www.cardmarket.com/en/Pokemon/Users/smilecollector" target="_blank" rel="noopener" style="color:var(--pink);font-weight:bold">Cardmarket: smilecollector ↗</a></p>
+    </div>
+  </section>
+
+  <footer>
+    ⚡ Smilecollector — um arquivo independente de cartas, histórias e perguntas desnecessariamente específicas. ⚡
+    <span class="legal">Pokémon e marcas relacionadas pertencem aos respectivos titulares. Este é um projecto independente de fã/coleccionador. Nada no Pokémon Lab deve ser confundido com conteúdo oficial, por muito convincente que pareça depois das 02:00.</span>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.flip-card').forEach(card => {
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('flipped'); }
+      });
+    });
+  </script>
+  <script src="assets/js/articles.js"></script>
+</body>
+</html>

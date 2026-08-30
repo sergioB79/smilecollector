@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CASE FILE #004 — The Moomoo Cheese Affair. Uma investigação Smilecollector Lab.">
+  <title>CASE FILE #004 — The Moomoo Cheese Affair | Smilecollector Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f7f3e8;--grid:#e2d9c2;--ink:#191919;--pink:#ff2a85;--blue:#00dcea;--yellow:#ffe600;--green:#395846;--milk:#fffdf4;--cheese:#f2c94c;--rind:#c9982a;--danger:#ffd5d5;--hand:'Reenie Beanie',cursive;--title:'Permanent Marker',cursive;--type:'Special Elite',monospace}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{background-color:var(--paper);color:var(--ink);font-family:var(--type);line-height:1.65;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:25px 25px;padding:20px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 2rem;background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);margin:0 auto 3rem;max-width:1400px;position:sticky;top:10px;z-index:30}
+    .logo img{height:50px;border:2px solid var(--ink);transform:rotate(-2deg);display:block}
+    nav{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:flex-end}
+    nav a,.back-btn{font-family:var(--title);text-decoration:none;color:var(--ink);background:var(--yellow);padding:.28rem .65rem;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
+    nav a:hover,.back-btn:hover{background:var(--blue)}
+    .page{max-width:1000px;margin:0 auto 4rem}.hero{text-align:center;padding:2.3rem 1rem 1rem}
+    .case-no{display:inline-block;background:var(--ink);color:#fff;font-family:var(--title);padding:.25rem .7rem;transform:rotate(-1deg);margin-bottom:1rem;letter-spacing:.05em}
+    .hero h1{font-family:var(--title);font-size:clamp(2.6rem,8vw,5.3rem);line-height:.92;text-transform:uppercase;text-shadow:4px 4px 0 var(--yellow)}
+    .hero .sub{font-family:var(--hand);font-size:clamp(1.55rem,3vw,2.25rem);color:var(--pink);margin:1rem auto;transform:rotate(-1deg)}
+    .legend{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin:1rem 0 2rem}.badge{display:inline-block;font-family:var(--title);font-size:.75rem;padding:.25rem .5rem;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);background:#fff}.verified{background:#c8efc4}.made{background:#f7b7d2}.mixed{background:#bdeff2}.warning{background:#ffe78e}
+    .article{background:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:3rem;position:relative}
+    .article::before{content:"CULINARY INCIDENT / KALOS PLACEMENT: LAB-MADE";position:absolute;top:-18px;left:24px;background:var(--yellow);padding:.2rem .65rem;border:2px solid var(--ink);font-family:var(--hand);font-size:1.18rem;transform:rotate(-2deg)}
+    .article p{font-size:1.08rem;margin-bottom:1.12rem}.article h2{font-family:var(--title);font-size:clamp(1.75rem,5vw,2.6rem);line-height:1.05;margin:2.5rem 0 .8rem}
+    .dropcap:first-letter{font-family:var(--title);font-size:3.8rem;float:left;line-height:.72;margin:.15rem .45rem 0 0}
+    .canon-seed{background:#edf7e9;border:2px dashed var(--green);padding:1.35rem 1.4rem;margin:1.4rem 0 2rem;position:relative}.canon-seed::before{content:"FIELD VERIFIED — CANON SEED";font-family:var(--title);font-size:.74rem;background:#c8efc4;border:2px solid var(--ink);padding:.15rem .45rem;position:absolute;top:-14px;left:16px}.canon-seed p{margin:.25rem 0;font-size:1rem}
+    .lab-seed{background:#fff0f7;border:2px dashed var(--pink);padding:1.35rem 1.4rem;margin:1.4rem 0 2rem;position:relative}.lab-seed::before{content:"LAB-MADE — NÃO CANON";font-family:var(--title);font-size:.74rem;background:#f7b7d2;border:2px solid var(--ink);padding:.15rem .45rem;position:absolute;top:-14px;left:16px}
+    .cheese-specimen{max-width:720px;margin:2rem auto 2.5rem;background:var(--milk);border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:1rem;transform:rotate(.35deg)}
+    .label{min-height:320px;border:4px double var(--green);padding:2.2rem 1.5rem;text-align:center;background:radial-gradient(circle at 18% 25%,rgba(201,152,42,.18) 0 11px,transparent 12px),radial-gradient(circle at 79% 55%,rgba(201,152,42,.15) 0 15px,transparent 16px),radial-gradient(circle at 60% 15%,rgba(201,152,42,.14) 0 8px,transparent 9px),linear-gradient(135deg,#fffdf2,#f9edb8)}
+    .label .tiny{font-size:.8rem;letter-spacing:.16em}.label h2{font-family:var(--title);font-size:clamp(2.4rem,7vw,4.4rem);margin:.7rem 0 .2rem;text-shadow:3px 3px 0 #fff}
+    .label .wheel{width:125px;height:125px;border-radius:50%;margin:1.1rem auto;background:var(--cheese);border:4px solid var(--rind);box-shadow:inset -14px -12px 0 rgba(0,0,0,.08),4px 4px 0 var(--ink);position:relative}.label .wheel::before,.label .wheel::after{content:"";position:absolute;border-radius:50%;background:#e5b53a}.label .wheel::before{width:18px;height:18px;left:28px;top:34px}.label .wheel::after{width:13px;height:13px;right:25px;bottom:28px}.label .edition{font-family:var(--hand);font-size:1.6rem;color:#7a3f1b}
+    .protocol,.menu-card,.incident,.pairing{border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:1.25rem 1.35rem;margin:1.35rem 0}.protocol{background:#f5f1df}.menu-card{background:#fffdf6}.incident{background:var(--danger)}.pairing{background:#eef7f5}.protocol strong,.menu-card strong,.incident strong,.pairing strong{font-family:var(--title)}.protocol ol,.pairing ul{padding-left:1.35rem;margin:.7rem 0}.protocol li,.pairing li{margin:.5rem 0}.price{font-family:var(--title);font-size:1.5rem;color:#7a3f1b}
+    .quote-note{background:#fff6bd;border:2px solid var(--ink);padding:1rem 1.2rem;margin:1.4rem 0;font-family:var(--hand);font-size:1.4rem;transform:rotate(-.4deg)}.margin-note{display:block;font-family:var(--hand);font-size:1.3rem;color:#8c2750;margin:1rem 0;transform:rotate(-.6deg)}
+    .sources{background:#f1efe6;border:2px dashed #7a756a;padding:1.2rem 1.4rem;margin-top:2.5rem}.sources h3{font-family:var(--title);font-size:1.05rem}.sources ul{padding-left:1.2rem}.sources li{margin:.5rem 0;font-size:.92rem}.sources a{color:#174d6f}.lab-disclaimer{font-size:.92rem!important;color:#555044}
+    .bottom-nav{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:2rem 0}
+    footer{text-align:center;padding:3rem 1rem;font-family:var(--hand);font-size:1.5rem;background:var(--yellow);border:3px solid var(--ink);max-width:1000px;margin:0 auto}footer small{display:block;font-family:var(--type);font-size:.74rem;margin-top:1rem;color:#4b463b}
+    @media(max-width:760px){header{position:relative;top:auto;flex-direction:column;padding:1rem}.article{padding:2rem 1.35rem}.article::before{font-size:1rem;left:10px}.label{min-height:280px;padding:1.5rem 1rem}}
+    @media(max-width:480px){body{padding:10px}nav a{font-size:.78rem}.article{padding:1.8rem 1rem}}
+  </style>
+</head>
+<body>
+<header>
+  <a class="logo" href="../index.html"><img src="../logo-smilecollector.png" alt="Smilecollector"></a>
+  <nav>
+    <a href="../lab.html#dossiers">← Voltar aos Dossiers</a>
+    <a href="../index.html">Home</a>
+    <a href="https://sergiob79.github.io/my_pkm_binder/" target="_blank" rel="noopener">Binders ↗</a>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="hero">
+    <span class="case-no">CASE FILE #004</span>
+    <h1>The Moomoo Cheese Affair</h1>
+    <p class="sub">O queijo que Pokémon nunca confirmou e que o Lab decidiu maturar na mesma.</p>
+    <div class="legend">
+      <span class="badge verified">FIELD VERIFIED</span>
+      <span class="badge made">LAB-MADE</span>
+      <span class="badge mixed">CANON + CONSEQUÊNCIAS</span>
+      <span class="badge warning">DAIRY RISK: UNASSESSED</span>
+    </div>
+  </section>
+
+  <article class="article">
+    <p class="dropcap">Há um problema que ninguém parece ter considerado com a seriedade necessária: Pokémon tem Miltank. Miltank dá leite. Há cozinheiros. Há restaurantes. Há regiões inteiras com uma relação bastante desenvolvida com gastronomia.</p>
+    <p>Portanto, estatisticamente, alguém fez queijo.</p>
+    <p>Procurámos o <strong>Moomoo Cheese</strong> nos registos oficiais.</p>
+    <p>Não encontrámos.</p>
+    <p>Esta teria sido uma excelente altura para terminar a investigação.</p>
+    <p><strong>Não terminou.</strong></p>
+
+    <div class="canon-seed">
+      <p><strong>O que sabemos:</strong> a Pokédex oficial descreve o leite de Miltank como altamente nutritivo e diz que o seu sabor muda com as estações.</p>
+      <p><strong>Também sabemos:</strong> nos jogos principais, Moomoo Milk é um item consumível que recupera 100 HP.</p>
+      <p><strong>O que não sabemos:</strong> absolutamente tudo o que vem a seguir.</p>
+    </div>
+
+    <div class="cheese-specimen">
+      <div class="label">
+        <div class="tiny">SMILECOLLECTOR LAB · KALOS CULINARY DIVISION · NON-CANON SAMPLE</div>
+        <h2>MOOMOO CHEESE</h2>
+        <div class="wheel"></div>
+        <div class="edition">12-month hypothetical cure · Batch MM-004</div>
+        <div class="tiny">DO NOT FEED TO PARAS WITHOUT SUPERVISION</div>
+      </div>
+    </div>
+
+    <div class="lab-seed">
+      <p><strong>Hipótese operacional do Lab:</strong> se o leite existe e é valorizado, alguém algures tentou fermentá-lo. Para efeitos desta experiência, colocámos essa pessoa em Kalos porque Lumiose parece exactamente o tipo de cidade onde alguém cobraria demasiado por uma tábua de queijo.</p>
+    </div>
+
+    <h2>01 — A Doutrina Miltank</h2>
+    <p>A primeira versão da receita partia de uma premissa razoável: o leite é a matéria-prima. A segunda versão acrescentou temperatura, humidade e cura. A terceira já tinha música ambiente, um Smeargle com uma escova e uma proibição formal de entrada a Gengar.</p>
+    <p>Nessa altura percebemos que já não estávamos a fazer queijo. Estávamos a fundar uma escola.</p>
+
+    <div class="protocol">
+      <strong>PROTOCOLO MM-04/A — PRÉ-ORDENHA</strong>
+      <ol>
+        <li>Nada de combates nas 24 horas anteriores.</li>
+        <li>Gengar não entra no estábulo. Não por ciência. Por prudência.</li>
+        <li>Escovagem lenta. Smeargle autorizado, desde que não tente assinar a Miltank.</li>
+        <li>Música suave. O departamento insiste em flautas. Não sabemos porquê.</li>
+        <li>Se a Miltank parecer irritada, adiar. O queijo pode esperar. A Miltank pesa 75,5 kg e tem opinião.</li>
+      </ol>
+    </div>
+
+    <p>Não existe qualquer evidência oficial de que uma Miltank stressada produza queijo amargo. Também não existe qualquer Moomoo Cheese oficial.</p>
+    <p>A Miltank experimental parece mais contente.</p>
+    <p><strong>O protocolo permanece.</strong></p>
+
+    <span class="margin-note">[ nota: estudar possibilidade de playlist “Johto para Vacas — volume 1” ]</span>
+
+    <h2>02 — 100 HP Foi Só o Começo</h2>
+    <p>O Moomoo Milk tem uma vantagem maravilhosa para qualquer laboratório com problemas de autocontrolo: já chega acompanhado de um número. <strong>100 HP.</strong></p>
+    <p>Foi suficiente.</p>
+    <p>A divisão de fermentação apresentou imediatamente a seguinte teoria: se leite recupera HP, queijo é leite que teve tempo para pensar no assunto.</p>
+
+    <div class="incident">
+      <strong>CLAIM MM-04/B — TOTALMENTE LAB-MADE</strong>
+      <p style="margin-top:.6rem">Uma fatia curada durante 12 meses recuperaria um Pokémon de grande porte e removeria Burn ou Paralysis graças a fermentos lácticos vivos.</p>
+      <p><strong>Estado científico:</strong> não testado, não canon, nutricionalmente suspeito.</p>
+      <p><strong>Estado editorial:</strong> excelente.</p>
+    </div>
+
+    <p>O departamento médico pediu-nos para deixar claro que fermentar um item de cura não produz automaticamente um item de cura melhor.</p>
+    <p>O departamento de queijo pediu-nos para deixar o departamento médico fora disto.</p>
+
+    <h2>03 — O Problema de Lumiose</h2>
+    <p>Depois de inventarmos o produto, surgiu inevitavelmente a economia.</p>
+    <p>Para efeitos da simulação, criámos um restaurante de luxo em Lumiose City chamado <strong>La Vache Astrale</strong>. Não existe nos jogos. Não aparece no anime. Nunca recebeu uma estrela Michelin porque, entre outras dificuldades, também não existe.</p>
+    <p>Mesmo assim, o departamento financeiro conseguiu tornar a reserva impossível.</p>
+
+    <div class="menu-card">
+      <strong>LA VACHE ASTRALE — MENU DE DEGUSTAÇÃO / LAB COPY</strong>
+      <p style="margin-top:.7rem"><em>Gratin de Berries, Moomoo Cheese 12M, redução de Sitrus e sal de Coumarine.</em></p>
+      <p class="price">₽ 48.000</p>
+      <p>Água incluída apenas se não for “de Suicune”. Nesse caso começa outra discussão.</p>
+    </div>
+
+    <p>A procura tornou-se tão absurda na nossa folha de cálculo que alguém escreveu “mercado negro” numa coluna.</p>
+    <p>Daí até uma conspiração para monopolizar quintas de Miltank em Johto demorou aproximadamente sete minutos.</p>
+    <p><strong>Não há qualquer evidência canónica de que uma equipa vilã tenha tentado controlar uma rota internacional de queijo.</strong></p>
+    <p>Mas admitimos que já vimos planos piores.</p>
+
+    <div class="quote-note">[ orçamento rejeitado: “segurança adicional para transporte inter-regional de lacticínios de alto valor” ]</div>
+
+    <h2>04 — Sobrematuração e o Efeito Slaking</h2>
+    <p>Todo o produto artesanal precisa de uma história sobre uma cave, um lote esquecido e uma coisa que correu mal.</p>
+    <p>O lote MM-04/19 permaneceu numa caixa de madeira muito além do prazo fictício de cura. Segundo o relatório igualmente fictício, desenvolveu um fungo visualmente semelhante ao associado a Paras.</p>
+    <p>Foi aqui que o comité de segurança pediu para destruir a amostra.</p>
+    <p>Foi também aqui que alguém perguntou a que sabia.</p>
+
+    <div class="incident">
+      <strong>INCIDENT REPORT MM-04/19</strong>
+      <p style="margin-top:.6rem"><strong>Evento:</strong> ingestão acidental de queijo sobrematurado.</p>
+      <p><strong>Resultado:</strong> 71 horas de sono.</p>
+      <p><strong>Truant adquirido:</strong> não demonstrado.</p>
+      <p><strong>Ronco:</strong> confirmado por todos no edifício.</p>
+      <p><strong>Relação com Paras:</strong> estética e completamente inventada.</p>
+    </div>
+
+    <p>A amostra foi retirada de circulação.</p>
+    <p>O sujeito acordou.</p>
+    <p>O queijo recusou comentar.</p>
+
+    <h2>05 — Pairing Notes</h2>
+    <p>Um queijo que não existe merece, no mínimo, uma harmonização cuidadosamente documentada por escanções que também não existem.</p>
+
+    <div class="pairing">
+      <strong>LAB SOMMELIER RECOMMENDATIONS</strong>
+      <ul>
+        <li><strong>Cheri Berry maturada</strong> — o picante corta a gordura. Esta é a explicação elegante. A outra é que alguém tinha Cheri Berries.</li>
+        <li><strong>Água de nascente “Suicune Reserve”</strong> — origem impossível de confirmar. O fornecedor deixou de responder quando pedimos cadeia de custódia.</li>
+        <li><strong>Authentic Sinistea</strong> — excelente adstringência. Serviço de chá tecnicamente assombrado. Gorjeta opcional.</li>
+      </ul>
+    </div>
+
+    <p>A combinação vencedora continua a ser Moomoo Cheese, Cheri Berry e uma quantidade irresponsável de confiança.</p>
+
+    <div class="quote-note">CONCLUSÃO DO LAB: Pokémon nunca nos deu Moomoo Cheese. Deu-nos uma vaca que produz leite nutritivo, um item chamado Moomoo Milk e demasiada liberdade editorial.</div>
+
+    <section class="sources">
+      <h3>CANON SEEDS USED IN THIS EXPERIMENT</h3>
+      <ul>
+        <li><a href="https://www.pokemon.com/us/pokedex/miltank" target="_blank" rel="noopener">Pokémon.com — Miltank Pokédex</a>: leite altamente nutritivo; o sabor muda com as estações.</li>
+        <li><a href="https://bulbapedia.bulbagarden.net/wiki/Moomoo_Milk" target="_blank" rel="noopener">Bulbapedia — Moomoo Milk</a>: nos jogos principais, recupera 100 HP.</li>
+      </ul>
+      <p class="lab-disclaimer"><strong>Everything else:</strong> produzido irresponsavelmente pelo Smilecollector Lab. Moomoo Cheese, La Vache Astrale, os protocolos, o efeito Slaking e a divisão de sommeliers são ficção editorial e não lore oficial Pokémon.</p>
+    </section>
+  </article>
+
+  <div class="bottom-nav">
+    <a class="back-btn" href="plusle-minun.html">← Relatório Plusle / Minun</a>
+    <a class="back-btn" href="../lab.html#dossiers">Voltar ao arquivo →</a>
+  </div>
+</main>
+
+<footer>
+  <p>⚡ Smilecollector Lab — Factos entram. Consequências desnecessárias saem. ⚡</p>
+  <small>Projecto independente de fã. Pokémon e nomes relacionados pertencem aos respectivos titulares. Conteúdo LAB-MADE é ficção editorial.</small>
+</footer>
+</body>
+</html>

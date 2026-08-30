@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "updated": "2026-08-30",
+  "articles": [
+    {
+      "date": "2026-08-30",
+      "type": "BEHAVIOURAL REPORT",
+      "number": "001",
+      "slug": "plusle-minun",
+      "url": "lab/plusle-minun.html",
+      "title": "Com amigos assim, quem precisa de inimigos?",
+      "subtitle": "Plusle, Minun e os limites clínicos do apoio moral",
+      "excerpt": "Dois Cheering Pokémon, demasiadas faíscas e uma Pokédex que transforma apoio emocional num potencial risco ocupacional.",
+      "canon_seed": "Plusle cria faíscas para apoiar os companheiros; Minun põe o apoio aos parceiros acima da própria segurança e aumenta as faíscas quando eles estão em dificuldades.",
+      "tags": [
+        "FIELD VERIFIED",
+        "CANON + CONSEQUÊNCIAS"
+      ],
+      "status": "ELECTRICAL SAFETY: QUESTIONABLE",
+      "subjects": [
+        "Plusle",
+        "Minun"
+      ],
+      "featured": true
+    },
+    {
+      "date": "2026-08-29",
+      "type": "CASE FILE",
+      "number": "004",
+      "slug": "moomoo-cheese",
+      "url": "lab/moomoo-cheese.html",
+      "title": "The Moomoo Cheese Affair",
+      "subtitle": "O queijo que Pokémon nunca confirmou e que o Lab decidiu maturar na mesma",
+      "excerpt": "Miltank produz leite nutritivo. Moomoo Milk recupera 100 HP. O Lab concluiu, irresponsavelmente, que alguém tinha de fazer queijo.",
+      "canon_seed": "Miltank produz leite altamente nutritivo; Moomoo Milk recupera 100 HP.",
+      "tags": [
+        "FIELD VERIFIED",
+        "LAB-MADE",
+        "CANON + CONSEQUÊNCIAS"
+      ],
+      "status": "DAIRY RISK: UNASSESSED",
+      "subjects": [
+        "Miltank",
+        "Moomoo Milk"
+      ],
+      "featured": true
+    }
+  ]
+}

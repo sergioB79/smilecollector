@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pokémon Lab — investigações, artefactos e experiências Smilecollector. Factos verificados entram; conclusões desnecessárias saem.">
+  <title>Pokémon Lab — Smilecollector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f7f3e8;--grid:#e2d9c2;--ink:#191919;--pink:#ff2a85;--blue:#00dcea;--yellow:#ffe600;--green:#395846;--pale:#eef5ea;--hand:'Reenie Beanie',cursive;--title:'Permanent Marker',cursive;--type:'Special Elite',monospace}
+    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+    body{background-color:var(--paper);color:var(--ink);font-family:var(--type);line-height:1.63;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:25px 25px;padding:20px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 2rem;background:white;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);margin:0 auto 3rem;max-width:1400px;position:sticky;top:10px;z-index:20}
+    .logo img{height:50px;border:2px solid var(--ink);transform:rotate(-2deg);display:block}
+    nav{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:flex-end}nav a{font-family:var(--title);text-decoration:none;color:var(--ink);background:var(--yellow);padding:.25rem .6rem;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}nav a:hover{background:var(--blue)}
+    .lab-container{max-width:1080px;margin:0 auto 4rem;display:flex;flex-direction:column;gap:3rem}
+    .hero{text-align:center;padding:3rem 1rem 1rem}.hero h1{font-family:var(--title);font-size:clamp(3rem,8vw,6rem);line-height:.9;text-transform:uppercase;text-shadow:4px 4px 0 var(--yellow)}.hero .sub{font-family:var(--hand);font-size:clamp(1.6rem,3vw,2.3rem);color:var(--pink);margin:.9rem auto;transform:rotate(-1deg)}
+    .manifesto,.article{background:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);position:relative}.manifesto{padding:2.2rem 2.6rem;transform:rotate(.15deg)}.manifesto p{margin-bottom:1rem;font-size:1.08rem}
+    .method{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;align-items:center;margin:1.5rem 0}.step{border:2px solid var(--ink);background:var(--pale);padding:.8rem .55rem;text-align:center;font-family:var(--title);font-size:.82rem}.arrow{text-align:center;font-family:var(--title);font-size:1.4rem}
+    .legend{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.3rem 0}.badge{display:inline-block;font-family:var(--title);font-size:.75rem;padding:.25rem .5rem;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);background:#fff}.verified{background:#c8efc4}.made{background:#f7b7d2}.mixed{background:#bdeff2}.warning{background:#ffe78e}
+    .article{padding:3rem;transform:rotate(.08deg)}.article::before{content:attr(data-file);position:absolute;top:-18px;left:24px;background:var(--yellow);padding:.2rem .65rem;border:2px solid var(--ink);font-family:var(--hand);font-size:1.25rem;transform:rotate(-2deg)}
+    .article h2{font-family:var(--title);font-size:clamp(2rem,5vw,3rem);line-height:1.05;margin-bottom:.5rem}.kicker{font-family:var(--hand);font-size:1.45rem;color:var(--pink);margin-bottom:1rem}.article p{font-size:1.08rem;margin-bottom:1.1rem}.article h3{font-family:var(--title);font-size:1.45rem;margin:1.8rem 0 .6rem}.article h4{font-family:var(--title);font-size:1.15rem;margin:1.2rem 0 .35rem}
+    .canon-seed{background:#edf7e9;border:2px dashed var(--green);padding:1.15rem 1.3rem;margin:1.2rem 0 1.5rem;position:relative}.canon-seed::before{content:"CANON SEED";font-family:var(--title);font-size:.75rem;background:#c8efc4;border:2px solid var(--ink);padding:.15rem .45rem;position:absolute;top:-14px;left:16px}.canon-seed p{margin:.25rem 0;font-size:1rem}
+    .lab-note{background:#fff6bd;border:2px solid var(--ink);padding:1rem 1.2rem;margin:1.25rem 0;font-family:var(--hand);font-size:1.35rem;transform:rotate(-.5deg)}
+    .artifact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem;margin:1.4rem 0}.artifact{border:3px solid var(--ink);background:#f5f5f2;box-shadow:4px 4px 0 var(--ink);padding:.7rem}.artifact img{width:100%;height:auto;display:block;border:1px solid #aaa}.artifact figcaption{font-family:var(--hand);font-size:1.2rem;padding:.6rem .3rem .2rem;color:#7c263f}
+    .single-img{display:block;max-width:780px;width:100%;margin:1.4rem auto;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+    .recipe,.dialect,.proverb{border-left:5px solid var(--pink);padding:.25rem 0 .25rem 1.1rem;margin:1.1rem 0}.recipe strong,.dialect strong,.proverb strong{font-family:var(--title)}.translation{font-style:italic}.context{color:#514c43;font-size:.97rem!important}.classification{font-family:var(--hand);font-size:1.25rem!important;color:#8c2750}
+    .sources{background:#f1efe6;border:2px dashed #7a756a;padding:1.2rem 1.4rem;margin-top:2rem}.sources h3{margin-top:0;font-size:1.05rem}.sources ul{padding-left:1.2rem}.sources li{margin:.45rem 0;font-size:.92rem}.sources a{color:#174d6f}
+    .dossier-preview{background:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:2.1rem 2.3rem;position:relative}
+    .dossier-preview::before{content:"NEW DOSSIER";position:absolute;top:-16px;left:22px;background:var(--pink);color:white;border:2px solid var(--ink);padding:.15rem .55rem;font-family:var(--hand);font-size:1.15rem;transform:rotate(-2deg)}
+    .dossier-preview h2{font-family:var(--title);font-size:clamp(1.8rem,5vw,2.7rem);margin:.4rem 0 .5rem;line-height:1.05}
+    .dossier-preview p{font-size:1.05rem;margin:.7rem 0}
+    .dossier-preview .open-dossier{display:inline-block;margin-top:.8rem;font-family:var(--title);text-decoration:none;color:var(--ink);background:var(--yellow);padding:.55rem .85rem;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+    .dossier-preview .open-dossier:hover{background:var(--blue);transform:translate(-1px,-1px)}
+    .separator{border:none;height:4px;background:repeating-linear-gradient(45deg,var(--pink),var(--pink) 10px,var(--yellow) 10px,var(--yellow) 20px);box-shadow:2px 2px 0 var(--ink)}
+    footer{text-align:center;padding:3rem 1rem;font-family:var(--hand);font-size:1.55rem;background:var(--yellow);border:3px solid var(--ink);max-width:1400px;margin:2rem auto 0}.legal{display:block;font-family:var(--type);font-size:.76rem;margin-top:1rem;color:#4b463b}
+
+    /* --- ARTICLE REGISTRY: cards rendered from lab/articles.json --- */
+    .article-registry{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem;width:100%;margin-top:1.6rem}
+    .archive-card{background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:1.55rem;position:relative;transform:rotate(.08deg)}
+    .archive-card:nth-child(even){transform:rotate(-.3deg)}
+    .archive-topline{font-family:var(--title);font-size:.78rem;letter-spacing:.04em;border-bottom:2px dashed #aaa;padding-bottom:.45rem;margin-bottom:.8rem;color:#4d493f;display:flex;justify-content:space-between;gap:1rem}
+    .archive-card h3{font-family:var(--title);font-size:1.55rem;line-height:1.05;margin-bottom:.35rem}
+    .archive-subtitle{font-family:var(--hand);font-size:1.35rem!important;color:var(--pink);line-height:1.05;margin-bottom:.9rem!important}
+    .archive-badges{display:flex;gap:.42rem;flex-wrap:wrap;margin:.8rem 0 1rem}
+    .archive-badge{font-family:var(--title);font-size:.66rem;padding:.18rem .4rem;border:2px solid var(--ink);box-shadow:1px 1px 0 var(--ink);background:#fff}
+    .archive-badge.verified{background:#c9f0c2}.archive-badge.made{background:#f5b3d0}.archive-badge.mixed{background:#bdeff2}.archive-badge.warning{background:#ffe78d}
+    .archive-seed{font-size:.93rem!important;background:#eef5ea;border-left:4px solid #395846;padding:.75rem .85rem;margin:1rem 0!important}
+    .archive-subjects{font-size:.78rem!important;color:#6e685d;letter-spacing:.06em}
+    .archive-open{display:inline-block;margin-top:.8rem;font-family:var(--title);text-decoration:none;color:var(--ink);background:var(--yellow);padding:.48rem .72rem;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+    .archive-open:hover{background:var(--blue);transform:translate(-1px,-1px)}
+    .archive-empty,.archive-error{grid-column:1/-1;background:#fff;border:2px dashed var(--ink);padding:1rem 1.2rem}
+    .archive-error code{font-family:var(--type)}
+    @media(max-width:850px){header{position:relative;top:auto;flex-direction:column;padding:1rem}.method,.article-registry{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.artifact-grid{grid-template-columns:1fr}.article,.manifesto{padding:2rem 1.4rem}}
+    @media(max-width:520px){body{padding:10px}nav a{font-size:.8rem}.article{padding:1.7rem 1.1rem}.hero{padding-top:1rem}}
+  </style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html"><img src="logo-smilecollector.png" alt="Smilecollector"></a>
+  <nav>
+    <a href="index.html">← Home</a>
+    <a href="#dossiers">Dossiers</a>
+    <a href="#artefactos">Artefactos 420</a>
+    <a href="#farfetchd">Cozinha</a>
+    <a href="#psyduck">Psyduckês</a>
+    <a href="#ditados">Sabedoria Popular</a>
+    <a href="https://sergiob79.github.io/my_pkm_binder/" target="_blank" rel="noopener">Binders ↗</a>
+  </nav>
+</header>
+
+<main class="lab-container">
+  <section class="hero">
+    <h1>Pokémon Lab</h1>
+    <p class="sub">“Já enviámos várias propostas. Continuam sem responder. A investigação prossegue.”</p>
+  </section>
+
+  <section class="manifesto">
+    <div class="legend">
+      <span class="badge verified">FIELD VERIFIED</span>
+      <span class="badge made">LAB-MADE</span>
+      <span class="badge mixed">CANON + CONSEQUÊNCIAS</span>
+      <span class="badge warning">PROBABLY A BAD IDEA</span>
+    </div>
+    <p><strong>O Lab não inventa factos Pokémon.</strong> Isso seria preguiça. Pokémon já nos fornece material mais estranho do que qualquer pessoa sensata precisa.</p>
+    <p>Aqui fazemos outra coisa: encontramos um facto verificável, aceitamos a premissa sem discutir e perguntamos o que acontece a seguir. Se Farfetch’d carrega uma planta que também pode servir de alimento, alguém vai acabar por perguntar pelo livro de receitas. Se Psyduck tem dores de cabeça tão fortes que desencadeiam poderes que depois nem recorda, alguém terá de tentar traduzir os avisos.</p>
+    <div class="method">
+      <div class="step">CANON SEED</div><div class="arrow">→</div><div class="step">PERGUNTA DESNECESSÁRIA</div><div class="arrow">→</div><div class="step">ARTEFACTO</div>
+    </div>
+    <p><strong>Regra de ferro:</strong> tudo o que é inventado pelo Smilecollector é marcado como tal. Uma carta falsa pode ser uma óptima peça de ficção. Continua a ser falsa. Um Pokémon inventado pode ter um dossier completo. Continua a ter exactamente zero entradas oficiais na Pokédex.</p>
+    <div class="lab-note">[ segurança: se uma experiência começar a parecer canon, aumentar imediatamente o tamanho do carimbo LAB-MADE ]</div>
+  </section>
+
+
+  <section class="manifesto" id="dossiers">
+    <div class="legend"><span class="badge verified">AUTO-INDEXED</span><span class="badge mixed">lab/articles.json</span></div>
+    <h2 style="font-family:var(--title);font-size:clamp(2rem,5vw,3rem);margin:.3rem 0 .7rem">DOSSIER ARCHIVE</h2>
+    <p>Os artigos longos já não vivem todos nesta bancada. Cada investigação tem o seu próprio ficheiro, com botão de regresso, fontes e espaço para ganhar um design ligeiramente diferente sem deixar de parecer parte do mesmo caderno.</p>
+    <p><strong>Adicionar um artigo novo:</strong> criar a página em <code>lab/</code> e acrescentar uma entrada a <code>lab/articles.json</code>. A Home e este arquivo tratam do resto.</p>
+    <div class="article-registry" data-article-registry></div>
+  </section>
+
+  <hr class="separator">
+
+  <article class="article" id="artefactos" data-file="RECOVERED OBJECTS — BATCH 420">
+    <div class="legend"><span class="badge made">LAB-MADE</span><span class="badge warning">NOT FOR RESALE AS REAL TCG</span></div>
+    <h2>O caso da Edição 420</h2>
+    <p class="kicker">Ou: o momento exacto em que “vou fazer só uma imagem” deixou de ser verdade.</p>
+    <p>Começou com uma ideia relativamente pequena: transformar o próprio coleccionador num daqueles objectos absurdamente específicos que só fariam sentido dentro de uma vitrina. Óculos, barba, bancada, ferramentas, um ar de quem desmontou alguma coisa e ainda não decidiu se a volta a montar.</p>
+    <p>Depois apareceu a placa <strong>THE DIY INSIGHT POKÉMON</strong>. Depois apareceu uma edição. Depois a edição ganhou o número 420. Depois alguém, infelizmente, percebeu que uma edição pode ter uma carta.</p>
+
+    <div class="artifact-grid">
+      <figure class="artifact"><img src="assets/lab/diy-insight-edition-420.png" alt="Boneco customizado Smilecollector — Edition 420"><figcaption>Prototype A — embalagem que já parece ter demasiada confiança em si própria.</figcaption></figure>
+      <figure class="artifact"><img src="assets/lab/diy-insight-custom.png" alt="Boneco customizado The DIY Insight Pokémon"><figcaption>Prototype B — menos botânica, mais oficina. O comité ficou dividido.</figcaption></figure>
+    </div>
+
+    <p>É importante documentar isto correctamente: <strong>não existe um “DIY Insight Pokémon” oficial.</strong> Não existe uma Collector Edition 420 da Pokémon Company. Não existe qualquer razão para haver moedas 420 no chão da embalagem. Tudo isto foi produzido no Lab e, portanto, está exactamente onde deve estar.</p>
+
+    <h3>SPECIMEN FILE #014 — Ninovio</h3>
+    <img class="single-img" src="assets/lab/ninovio.png" alt="Ninovio — The Knowledge-Seeker Pokémon, criação do Smilecollector Lab">
+    <p>Ninovio apareceu quando o Lab tentou responder a uma pergunta que não tinha sido colocada: <em>se um Pokémon passasse mais tempo a ler a Pokédex do que a lutar, como seria?</em></p>
+    <p><strong>Classificação:</strong> The Knowledge-Seeker Pokémon. <strong>Estado de canon:</strong> inexistente. <strong>Comportamento observado:</strong> abre um livro para confirmar uma coisa simples, encontra uma nota de rodapé, desaparece durante quatro horas e regressa com sete novas perguntas.</p>
+    <div class="lab-note">[ hipótese evolutiva rejeitada: “Professor Oak, mas azul e com cauda”. Demasiado perigosa. ]</div>
+
+    <h3>Do boneco para o TCG — porque aparentemente não havia travões</h3>
+    <div class="artifact-grid">
+      <figure class="artifact"><img src="assets/lab/edition-420-card.png" alt="Carta custom Edition 420"><figcaption>Custom card 01 — ataques e números são deliberadamente fictícios.</figcaption></figure>
+      <figure class="artifact"><img src="assets/lab/mega-evolution-420.png" alt="Carta custom Mega Evolution 420"><figcaption>Custom card 02 — Mega Evolution não autorizada por absolutamente ninguém.</figcaption></figure>
+    </div>
+    <img class="single-img" src="assets/lab/ether-smiles-420.png" alt="Carta custom Ether-Smiles Full Art">
+    <p>O estágio final abandonou qualquer tentativa de moderação e entrou no território <strong>ETHER-SMILES FULL ART</strong>. Aqui o Lab já não está a documentar Pokémon. Está a documentar o que acontece quando o botão “mais” deixa de ter supervisão.</p>
+    <p class="classification">LAB CONCLUSION: a cadeia evolutiva de uma ideia não precisa de fazer sentido. Precisa apenas de alguém que continue a clicar “generate”.</p>
+  </article>
+
+  <hr class="separator">
+
+  <article class="article" id="farfetchd" data-file="UNNECESSARY INVESTIGATION #001">
+    <div class="legend"><span class="badge mixed">CANON + CONSEQUÊNCIAS</span><span class="badge verified">SEED VERIFIED</span></div>
+    <h2>As receitas perdidas de Farfetch’d</h2>
+    <p class="kicker">Uma investigação culinária que começou mal no exacto momento em que percebemos que o pato traz o acompanhamento.</p>
+    <div class="canon-seed">
+      <p>Farfetch’d está inseparavelmente associado ao caule que transporta e defende; a forma de Galar usa alhos-porros particularmente grossos e resistentes em combate. Compilações das entradas e material oficial também registam o caule como material de ninho e alimento de emergência.</p>
+    </div>
+    <p>Há factos Pokémon que abrem uma porta. Este abre um restaurante.</p>
+    <p>Se um Farfetch’d carrega o mesmo caule para combate, construção e emergência alimentar, existe uma conclusão perfeitamente desnecessária: <strong>em algum momento teve de desenvolver opiniões sobre preparação.</strong> O que se segue é reconstrução culinária do Smilecollector Lab. Nenhuma destas receitas existe no canon. Ainda.</p>
+
+    <div class="recipe"><p><strong>1. Sopa de alho-francês e batata — Poffin Style</strong></p><p>A opção conservadora. Fatias finas do caule, batata, caldo e algumas Oran Berries porque alguém no laboratório decidiu que “Pokémon” não estava suficientemente visível na receita.</p><p class="context">Nota técnica: a perda temporária de poder crítico após cortar o caule é completamente inventada. O sabor também.</p></div>
+    <div class="recipe"><p><strong>2. Salteado de Cherubi com alho-porro e ervas</strong></p><p>A versão de alta cozinha. O caule serve de ingrediente, utensílio e, caso apareça um Greedent, sistema de segurança da cozinha. O Cherubi desta reconstrução é um elemento ficcional da receita; não existe qualquer fonte oficial que recomende salteá-lo.</p></div>
+    <div class="recipe"><p><strong>3. Refogado de cogumelos Paras</strong></p><p>Teoricamente aromático. Eticamente dependente de obter os cogumelos sem transformar o jantar numa investigação criminal. O Lab recomenda, por prudência, usar cogumelos normais e manter o Paras inteiro.</p></div>
+    <div class="recipe"><p><strong>4. Tempura de haste gigante — Galar Edition</strong></p><p>A forma de Galar merece equipamento de cozinha industrial. Corta-se a haste em secções, passa-se por massa leve e frita-se. A parte em que isto “dá força suficiente para evoluir” foi rejeitada pelo departamento de fact-checking antes de chegar à fritadeira.</p></div>
+    <div class="recipe"><p><strong>5. Pato à Pequim…</strong></p><p><em>O Farfetch’d olha para o título. Depois para nós. Depois para o caule.</em></p><p>Esta receita foi retirada por razões de segurança.</p></div>
+
+    <div class="lab-note">[ observação: poucas espécies chegam ao mundo acompanhadas de um trocadilho culinário tão estrutural. Farfetch’d não teve sorte. ]</div>
+    <div class="sources">
+      <h3>FIELD SOURCES</h3>
+      <ul>
+        <li><a href="https://www.pokemon.com/uk/pokedex/farfetchd" target="_blank" rel="noopener">Pokémon.com — Farfetch’d Pokédex</a> (relação vital com o caule; forma de Galar e alho-porro de combate).</li>
+        <li><a href="https://bulbapedia.bulbagarden.net/wiki/Farfetch%27d_(Pok%C3%A9mon)" target="_blank" rel="noopener">Bulbapedia — Farfetch’d</a> (compilação de usos do caule, incluindo alimento de emergência, com referências ao material de origem).</li>
+      </ul>
+    </div>
+  </article>
+
+  <hr class="separator">
+
+  <article class="article" id="psyduck" data-file="FIELD LINGUISTICS #054">
+    <div class="legend"><span class="badge mixed">CANON + TRANSLATION ATTEMPT</span><span class="badge made">TRANSLATIONS LAB-MADE</span></div>
+    <h2>Pequeno dicionário Psyduck–Humano</h2>
+    <p class="kicker">Primeira edição. A taxa de confiança linguística continua perigosamente baixa.</p>
+    <div class="canon-seed">
+      <p>A Pokédex oficial descreve Psyduck como sofrendo dores de cabeça constantes. Quando a dor se torna intensa, pode libertar poderes misteriosos; uma das entradas acrescenta que depois parece não se lembrar do episódio.</p>
+    </div>
+    <p>É uma base pouco conveniente para construir uma língua, mas é a que temos. O que se segue <strong>não é tradução oficial</strong>. É interpretação de campo baseada em vocalização, expressão facial e no facto de Psyduck parecer estar permanentemente a receber informação que não pediu.</p>
+
+    <div class="dialect"><p><strong>“Psy?”</strong></p><p class="translation">Tradução provável: “Perdi alguma coisa?”</p><p class="context">Contexto: quase sempre perdeu.</p></div>
+    <div class="dialect"><p><strong>“Psy… duck.”</strong> <em>(baixo, lento)</em></p><p class="translation">“A cabeça começou outra vez.”</p><p class="context">Procedimento recomendado: não fazer perguntas, não bater portas, não propor Sudoku.</p></div>
+    <div class="dialect"><p><strong>“PSY-AY-AY-AY!”</strong></p><p class="translation">Tradução: inconclusiva.</p><p class="context">Classificação operacional: não parece importante traduzir. Parece importante afastarmo-nos.</p></div>
+    <div class="dialect"><p><strong>“Psy…?”</strong> <em>(depois de vários objectos mudarem de sítio)</em></p><p class="translation">“Fui eu?”</p><p class="context">A Pokédex sugere que a resposta pode ser sim. Psyduck, infelizmente, não parece ter acesso à Pokédex.</p></div>
+    <div class="dialect"><p><strong>“Duck.”</strong> <em>(curto)</em></p><p class="translation">“Não gostei do plano.”</p><p class="context">Normalmente dito depois de o treinador já ter executado o plano.</p></div>
+    <div class="dialect"><p><strong>“Psy… psy… psy…”</strong> <em>(a andar em círculos)</em></p><p class="translation">“Procura-se sombra, silêncio e uma superfície horizontal.”</p><p class="context">Estado compatível com manutenção preventiva.</p></div>
+    <div class="dialect"><p><strong>“PSY?”</strong> <em>(a olhar para a destruição)</em></p><p class="translation">“Isto estava assim?”</p><p class="context">A memória pós-episódio é precisamente a parte que torna esta frase linguisticamente plausível.</p></div>
+    <div class="dialect"><p><strong>“Psy-duck…”</strong> <em>(olhar para a água, longa pausa)</em></p><p class="translation">“Hoje não.”</p><p class="context">Pode significar combate, conversa, movimento ou existência em geral. Falta amostra.</p></div>
+
+    <div class="lab-note">[ pedido de financiamento: gravador direccional, bloco de notas, 400 comprimidos de paracetamol para o investigador — pedido recusado na última linha ]</div>
+    <div class="sources"><h3>FIELD SOURCES</h3><ul><li><a href="https://www.pokemon.com/uk/pokedex/psyduck" target="_blank" rel="noopener">Pokémon.com — Psyduck Pokédex</a> (dores de cabeça crónicas, poderes misteriosos e falta de memória após episódios).</li></ul></div>
+  </article>
+
+  <hr class="separator">
+
+  <article class="article" id="ditados" data-file="ORAL TRADITIONS — UNVERIFIED REGION">
+    <div class="legend"><span class="badge mixed">REAL DEX FACTS / FAKE PROVERBS</span></div>
+    <h2>Sabedoria popular que nenhuma região admite ter inventado</h2>
+    <p class="kicker">Provérbios recolhidos pelo Lab. A tradição oral nega tudo.</p>
+    <p>Os ditados são inventados. As pequenas desgraças biológicas que os inspiraram, não.</p>
+
+    <div class="proverb"><p><strong>Quem vê Spoink, não vê cardiologia.</strong></p><p>A Pokédex oficial é pouco subtil: Spoink mantém o coração a bater saltando constantemente sobre a cauda; se parar, morre.</p><p class="classification">Moral tradicional de Hoenn: nunca oferecer uma cadeira a um Spoink.</p></div>
+
+    <div class="proverb"><p><strong>Gato escaldado de Magcargo… provavelmente deixou de preencher o inquérito.</strong></p><p>Material oficial Pokémon coloca o corpo de Magcargo nos 18.000 °F — perto de 10.000 °C.</p><p class="classification">O Lab tentou discutir termodinâmica. A termodinâmica pediu para não ser associada ao caso.</p></div>
+
+    <div class="proverb"><p><strong>Devagar se vai ao longe, disse o Slugma sem nunca parar.</strong></p><p>Entradas clássicas da Pokédex dizem que o corpo de magma de Slugma arrefece e endurece se ele deixar de se mover.</p><p class="classification">Há estilos de vida activos. Depois há isto.</p></div>
+
+    <div class="proverb"><p><strong>Água mole em pedra dura; Psyduck segura a cabeça.</strong></p><p>Psyduck é de tipo Água, mas as dores de cabeça intensas estão ligadas ao aparecimento dos seus poderes misteriosos.</p><p class="classification">Não é um provérbio útil. Também não parece haver muitos momentos úteis na terça-feira média de um Psyduck.</p></div>
+
+    <div class="proverb"><p><strong>O que não mata, engorda o Snorlax.</strong></p><p>A Pokédex oficial afirma que os seus sucos digestivos conseguem dissolver qualquer tipo de veneno e que comer coisas do chão não o incomoda.</p><p class="classification">A validade dos alimentos parece ser, para Snorlax, uma opinião.</p></div>
+
+    <div class="proverb"><p><strong>Quem tudo observa acaba por ver demasiado.</strong></p><p>Gothitelle observa as estrelas para prever o futuro. A Pokédex actual acrescenta uma nota tranquilizadora: parece distante porque já viu o fim de toda a existência.</p><p class="classification">Subitamente Psyduck parece emocionalmente estável.</p></div>
+
+    <div class="sources">
+      <h3>FIELD SOURCES</h3>
+      <ul>
+        <li><a href="https://www.pokemon.com/br/pokedex/spoink" target="_blank" rel="noopener">Pokémon.com — Spoink</a>.</li>
+        <li><a href="https://www.pokemon.com/uk/news/turn-up-the-heat-with-the-highest-temperature-pokemon" target="_blank" rel="noopener">Pokémon.com — Highest-Temperature Pokémon</a> (Magcargo).</li>
+        <li><a href="https://pokemondb.net/pokedex/slugma" target="_blank" rel="noopener">Pokémon Database — Slugma</a> (compilação das entradas antigas da Pokédex).</li>
+        <li><a href="https://www.pokemon.com/uk/pokedex/psyduck" target="_blank" rel="noopener">Pokémon.com — Psyduck</a>.</li>
+        <li><a href="https://www.pokemon.com/br/pokedex/snorlax" target="_blank" rel="noopener">Pokémon.com — Snorlax</a>.</li>
+        <li><a href="https://www.pokemon.com/br/pokedex/gothitelle" target="_blank" rel="noopener">Pokémon.com — Gothitelle</a>.</li>
+      </ul>
+    </div>
+  </article>
+
+  <hr class="separator">
+
+  <article class="article" data-file="OPEN CASES — DO NOT CLOSE">
+    <div class="legend"><span class="badge warning">BACKLOG</span></div>
+    <h2>Coisas que ainda não devíamos investigar</h2>
+    <p class="kicker">Infelizmente, alguém já as escreveu no quadro.</p>
+    <p><strong>Quem limpa um Pokémon Center?</strong> · <strong>Qual é o prémio de seguro de um treinador com Magcargo?</strong> · <strong>O problema logístico de possuir um Wailord.</strong> · <strong>Quanto custa reparar uma casa depois de um combate casual?</strong> · <strong>Existe legislação de ruído para Exploud?</strong> · <strong>Quem aprovou crianças sozinhas nas rotas?</strong> · <strong>O departamento de recursos humanos da Team Rocket.</strong></p>
+    <div class="lab-note">[ prioridade atribuída por método científico: apontar para a lista com os olhos fechados ]</div>
+  </article>
+</main>
+
+<footer>
+  ⚡ Pokémon Lab — factos entram pela porta da frente; conclusões estranhas saem pelas traseiras. ⚡
+  <span class="legal">Projecto independente de fã/coleccionador. Pokémon e marcas relacionadas pertencem aos respectivos titulares. Todos os espécimes, cartas, traduções, receitas, provérbios e artefactos marcados LAB-MADE são ficção editorial do Smilecollector.</span>
+</footer>
+  <script src="assets/js/articles.js"></script>
+</body>
+</html>
