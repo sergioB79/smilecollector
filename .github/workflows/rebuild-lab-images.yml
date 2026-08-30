@@ -1,4 +1,4 @@
-name: Rebuild Lab images
+name: Fix Cresselia image path
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  rebuild:
+  fix:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,48 +18,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Rebuild image assets
+      - name: Point Cresselia page at the real JPG
         shell: bash
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          import base64, re
+          sed -i 's#../assets/lab/cresselia-why\.webp#../assets/lab/cresselia-why.jpg#g' lab/cresselia.html
 
-          def rebuild(parts, output):
-              text = ''.join(Path(p).read_text(encoding='utf-8', errors='ignore') for p in parts)
-              text = re.sub(r'[^A-Za-z0-9+/=]', '', text)
-              # If padding appears inside sliced source text, remove it and restore only at the end.
-              text = text.replace('=', '')
-              text += '=' * ((4 - len(text) % 4) % 4)
-              data = base64.b64decode(text, validate=False)
-              Path(output).write_bytes(data)
-              print(output, len(data), data[:12])
-
-          rebuild([
-              'assets/lab/cresselia-why.1.b64',
-              'assets/lab/cresselia-why.2.b64',
-              'assets/lab/cresselia-why.3.b64',
-          ], 'assets/lab/cresselia-why.webp')
-
-          rebuild([
-              'assets/lab/chunks/vitinho/01.txt',
-              'assets/lab/chunks/vitinho/02.txt',
-              'assets/lab/chunks/vitinho/03.txt',
-          ], 'assets/lab/vitinho-route-215.jpg')
-          PY
-
-          file assets/lab/cresselia-why.webp
-          file assets/lab/vitinho-route-215.jpg
-
-      - name: Commit rebuilt images
-        shell: bash
-        run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/lab/cresselia-why.webp assets/lab/vitinho-route-215.jpg
+          git add lab/cresselia.html
+
           if git diff --cached --quiet; then
-            echo 'Images already correct.'
+            echo 'Cresselia path already correct.'
           else
-            git commit -m 'Rebuild Lab image assets'
+            git commit -m 'Fix Cresselia image path'
             git push
           fi
