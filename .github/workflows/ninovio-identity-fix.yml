@@ -1,0 +1,42 @@
+name: Ninovio identity fix
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ninovio-identity-fix.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clarify Edition 420 and Ninovio identities
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('lab.html')
+          s = p.read_text(encoding='utf-8')
+
+          old1 = 'Começou com uma ideia relativamente pequena: transformar o próprio coleccionador num daqueles objectos absurdamente específicos que só fariam sentido dentro de uma vitrina. Óculos, barba, bancada, ferramentas, um ar de quem desmontou alguma coisa e ainda não decidiu se a volta a montar.'
+          new1 = 'Começou com uma ideia relativamente pequena: transformar o próprio coleccionador — <strong>o tio</strong> — num daqueles objectos absurdamente específicos que só fariam sentido dentro de uma vitrina. Óculos, barba, bancada, ferramentas, um ar de quem desmontou alguma coisa e ainda não decidiu se a volta a montar.'
+          s = s.replace(old1, new1, 1)
+
+          old2 = '<p>Ninovio apareceu quando o Lab tentou responder a uma pergunta que não tinha sido colocada: <em>se um Pokémon passasse mais tempo a ler a Pokédex do que a lutar, como seria?</em></p>\n    <p><strong>Classificação:</strong> The Knowledge-Seeker Pokémon. <strong>Estado de canon:</strong> inexistente. <strong>Comportamento observado:</strong> abre um livro para confirmar uma coisa simples, encontra uma nota de rodapé, desaparece durante quatro horas e regressa com sete novas perguntas.</p>'
+          new2 = '<p><strong>Ninovio é o Mateus.</strong> O sobrinho que, sem saber, começou esta confusão toda quando recebeu o primeiro booster e acabou por arrastar o tio para o buraco sem fundo dos binders, sleeves e cartas brilhantes.</p>\n    <p>Se a <strong>Edition 420</strong> é o tio transformado em Pokémon de bancada, o <strong>SPECIMEN FILE #014</strong> é o Mateus passado pelo mesmo filtro pouco responsável do Lab: curioso, concentrado e capaz de ficar horas a estudar cartas como se estivesse a decifrar documentação classificada.</p>\n    <p><strong>Classificação:</strong> The Knowledge-Seeker Pokémon. <strong>Estado de canon:</strong> inexistente. <strong>Comportamento observado:</strong> abre um livro para confirmar uma coisa simples, encontra uma nota de rodapé, desaparece durante quatro horas e regressa com sete novas perguntas.</p>'
+          if old2 not in s:
+              raise SystemExit('Ninovio block not found')
+          s = s.replace(old2, new2, 1)
+          p.write_text(s, encoding='utf-8')
+          PY
+
+          rm -f .github/workflows/ninovio-identity-fix.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Clarify Ninovio as Mateus and Edition 420 as uncle'
+          git push
