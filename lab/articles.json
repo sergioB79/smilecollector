@@ -4,6 +4,30 @@
   "articles": [
     {
       "date": "2026-08-30",
+      "type": "COLLECTOR LOG",
+      "number": "001",
+      "slug": "collector-log-sabado",
+      "url": "lab/collector-log-sabado.html",
+      "title": "Sábado de Caça e Cartão",
+      "subtitle": "Quatro Pitch Black, um pack do McDonald’s e a restauração súbita da ordem no universo",
+      "excerpt": "A mesa demorou a libertar-se, os Pitch Black responderam com repetições e um pack comprado quase para aproveitar portes decidiu salvar a tarde com o Pikachu certo.",
+      "canon_seed": "Collector Log: memória real da colecção; sem extrapolação de lore.",
+      "tags": [
+        "COLLECTOR LOG",
+        "REAL LIFE",
+        "FAMILY OPERATION"
+      ],
+      "status": "TIO DO ANO: CANDIDATURA SUBMETIDA",
+      "subjects": [
+        "Pitch Black",
+        "McDonald's 2025",
+        "Pikachu",
+        "Binders"
+      ],
+      "featured": true
+    },
+    {
+      "date": "2026-08-30",
       "type": "EVENT BULLETIN",
       "number": "001",
       "slug": "toxtricity-live",
