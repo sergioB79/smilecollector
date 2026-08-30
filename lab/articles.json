@@ -4,6 +4,30 @@
   "articles": [
     {
       "date": "2026-08-30",
+      "type": "ARCHIVE LEAK",
+      "number": "001",
+      "slug": "vitinho",
+      "url": "lab/vitinho.html",
+      "title": "Descoberto o paradeiro do Vitinho",
+      "subtitle": "Três décadas depois, uma fotografia miserável finalmente explica tudo",
+      "excerpt": "Documentos desclassificados, uma Route 215 mal fotografada e uma equipa especializada em sono. A investigação que a televisão portuguesa claramente não queria que fizéssemos.",
+      "canon_seed": "Vitinho marcou a hora de dormir na RTP; Hypno, Darkrai, Musharna e Noctowl têm ligações oficiais a sono, sonhos ou actividade nocturna.",
+      "tags": [
+        "ARCHIVE LEAK",
+        "REALITY CONTAMINATION"
+      ],
+      "status": "BEDTIME ENFORCEMENT: ACTIVE",
+      "subjects": [
+        "Vitinho",
+        "Hypno",
+        "Darkrai",
+        "Musharna",
+        "Noctowl"
+      ],
+      "featured": true
+    },
+    {
+      "date": "2026-08-30",
       "type": "BEHAVIOURAL REPORT",
       "number": "001",
       "slug": "plusle-minun",
