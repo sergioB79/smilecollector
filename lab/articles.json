@@ -4,6 +4,21 @@
   "articles": [
     {
       "date": "2026-08-30",
+      "type": "FOUNDING NOTE",
+      "number": "001",
+      "slug": "cresselia",
+      "url": "lab/cresselia.html",
+      "title": "Porquê Cresselia?",
+      "subtitle": "Porque alguém tem de ficar para trás a apagar os pesadelos",
+      "excerpt": "A escolha do símbolo do Smilecollector acabou por fazer ainda mais sentido depois de descobrir que Cresselia deixa luz, penas e noites um pouco melhores atrás de si.",
+      "canon_seed": "Cresselia liberta partículas brilhantes ao voar; a Lunar Feather dissipa pesadelos; Lunar Dance faz Cresselia sair para restaurar quem entra depois.",
+      "tags": ["FOUNDING NOTE", "FIELD VERIFIED", "WHY CRESSELIA"],
+      "status": "LOGO ORIGIN: FINALLY EXPLAINED",
+      "subjects": ["Cresselia", "Lunar Feather", "Lunar Dance", "Fullmoon Island"],
+      "featured": true
+    },
+    {
+      "date": "2026-08-30",
       "type": "COLLECTOR LOG",
       "number": "001",
       "slug": "collector-log-sabado",
@@ -12,18 +27,9 @@
       "subtitle": "Quatro Pitch Black, um pack do McDonald’s e a restauração súbita da ordem no universo",
       "excerpt": "A mesa demorou a libertar-se, os Pitch Black responderam com repetições e um pack comprado quase para aproveitar portes decidiu salvar a tarde com o Pikachu certo.",
       "canon_seed": "Collector Log: memória real da colecção; sem extrapolação de lore.",
-      "tags": [
-        "COLLECTOR LOG",
-        "REAL LIFE",
-        "FAMILY OPERATION"
-      ],
+      "tags": ["COLLECTOR LOG", "REAL LIFE", "FAMILY OPERATION"],
       "status": "TIO DO ANO: CANDIDATURA SUBMETIDA",
-      "subjects": [
-        "Pitch Black",
-        "McDonald's 2025",
-        "Pikachu",
-        "Binders"
-      ],
+      "subjects": ["Pitch Black", "McDonald's 2025", "Pikachu", "Binders"],
       "featured": true
     },
     {
@@ -36,17 +42,9 @@
       "subtitle": "Amped na guitarra, Low Key no baixo e um encore Gigantamax que oficialmente não existe",
       "excerpt": "A comissão tentou impor um limite de decibéis. O manager perguntou quantos volts isso dava. A protecção civil já pôs os geradores de emergência a trabalhar.",
       "canon_seed": "Amped Form produz som semelhante a guitarra eléctrica; Low Key Form soa a baixo e pode gerar 15.000 volts; Gigantamax Toxtricity pode armazenar cerca de um milhão de litros de veneno.",
-      "tags": [
-        "EVENT BULLETIN",
-        "CANON + CONSEQUÊNCIAS"
-      ],
+      "tags": ["EVENT BULLETIN", "CANON + CONSEQUÊNCIAS"],
       "status": "GRID FAILURE: PLAUSIBLE",
-      "subjects": [
-        "Toxtricity",
-        "Amped Form",
-        "Low Key Form",
-        "Gigantamax Toxtricity"
-      ],
+      "subjects": ["Toxtricity", "Amped Form", "Low Key Form", "Gigantamax Toxtricity"],
       "featured": true
     },
     {
@@ -59,18 +57,9 @@
       "subtitle": "Três décadas depois, uma fotografia miserável finalmente explica tudo",
       "excerpt": "Documentos desclassificados, uma Route 215 mal fotografada e uma equipa especializada em sono. A investigação que a televisão portuguesa claramente não queria que fizéssemos.",
       "canon_seed": "Vitinho marcou a hora de dormir na RTP; Hypno, Darkrai, Musharna e Noctowl têm ligações oficiais a sono, sonhos ou actividade nocturna.",
-      "tags": [
-        "ARCHIVE LEAK",
-        "REALITY CONTAMINATION"
-      ],
+      "tags": ["ARCHIVE LEAK", "REALITY CONTAMINATION"],
       "status": "BEDTIME ENFORCEMENT: ACTIVE",
-      "subjects": [
-        "Vitinho",
-        "Hypno",
-        "Darkrai",
-        "Musharna",
-        "Noctowl"
-      ],
+      "subjects": ["Vitinho", "Hypno", "Darkrai", "Musharna", "Noctowl"],
       "featured": true
     },
     {
@@ -83,15 +72,9 @@
       "subtitle": "Plusle, Minun e os limites clínicos do apoio moral",
       "excerpt": "Dois Cheering Pokémon, demasiadas faíscas e uma Pokédex que transforma apoio emocional num potencial risco ocupacional.",
       "canon_seed": "Plusle cria faíscas para apoiar os companheiros; Minun põe o apoio aos parceiros acima da própria segurança e aumenta as faíscas quando eles estão em dificuldades.",
-      "tags": [
-        "FIELD VERIFIED",
-        "CANON + CONSEQUÊNCIAS"
-      ],
+      "tags": ["FIELD VERIFIED", "CANON + CONSEQUÊNCIAS"],
       "status": "ELECTRICAL SAFETY: QUESTIONABLE",
-      "subjects": [
-        "Plusle",
-        "Minun"
-      ],
+      "subjects": ["Plusle", "Minun"],
       "featured": true
     },
     {
@@ -104,16 +87,9 @@
       "subtitle": "O queijo que Pokémon nunca confirmou e que o Lab decidiu maturar na mesma",
       "excerpt": "Miltank produz leite nutritivo. Moomoo Milk recupera 100 HP. O Lab concluiu, irresponsavelmente, que alguém tinha de fazer queijo.",
       "canon_seed": "Miltank produz leite altamente nutritivo; Moomoo Milk recupera 100 HP.",
-      "tags": [
-        "FIELD VERIFIED",
-        "LAB-MADE",
-        "CANON + CONSEQUÊNCIAS"
-      ],
+      "tags": ["FIELD VERIFIED", "LAB-MADE", "CANON + CONSEQUÊNCIAS"],
       "status": "DAIRY RISK: UNASSESSED",
-      "subjects": [
-        "Miltank",
-        "Moomoo Milk"
-      ],
+      "subjects": ["Miltank", "Moomoo Milk"],
       "featured": true
     }
   ]
