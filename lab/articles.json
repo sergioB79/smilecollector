@@ -4,6 +4,21 @@
   "articles": [
     {
       "date": "2026-08-30",
+      "type": "DOMESTIC INCIDENT",
+      "number": "002",
+      "slug": "greavard-adoption",
+      "url": "lab/greavard-adoption.html",
+      "title": "10 Razões Para Ter Cuidado Ao Adotar um Greavard",
+      "subtitle": "E não o deixar ir para a lareira",
+      "excerpt": "Greavard é afável, carente, fácil de adotar e conhecido por drenar força vital sem querer. Portanto, naturalmente, o Lab preparou um guia doméstico.",
+      "canon_seed": "Greavard não suporta a solidão, segue quem lhe dê atenção, repousa enterrado e pode drenar lentamente a força vital de quem está perto sem intenção.",
+      "tags": ["DOMESTIC INCIDENT", "FIELD VERIFIED", "CANON + CONSEQUÊNCIAS"],
+      "status": "ADOPTION RISK: CUDDLY",
+      "subjects": ["Greavard", "Ghost Pokémon", "Paldea", "Adoption"],
+      "featured": true
+    },
+    {
+      "date": "2026-08-30",
       "type": "FOUNDING NOTE",
       "number": "001",
       "slug": "cresselia",
