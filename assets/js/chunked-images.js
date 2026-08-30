@@ -1,9 +1,28 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const images = [...document.querySelectorAll('img[data-chunk-base][data-chunk-count]')];
+
   for (const img of images) {
+    const base = img.dataset.chunkBase;
+    const count = Number(img.dataset.chunkCount);
+
+    // Some older Lab pages were stored as chunked base64 while binary upload
+    // was being awkward. Keep that support, but use a normal asset whenever
+    // the reconstruction fails or the browser rejects the resulting image.
+    const fallback = img.dataset.fallbackSrc ||
+      (base && base.endsWith('/vitinho') ? '../assets/lab/vitinho-route-215.jpg' : '');
+
+    const useFallback = () => {
+      if (!fallback) {
+        img.alt += ' [imagem temporariamente indisponível]';
+        return;
+      }
+      img.onerror = null;
+      img.src = fallback;
+      img.removeAttribute('data-chunk-base');
+      img.removeAttribute('data-chunk-count');
+    };
+
     try {
-      const base = img.dataset.chunkBase;
-      const count = Number(img.dataset.chunkCount);
       const parts = await Promise.all(
         Array.from({ length: count }, (_, i) =>
           fetch(`${base}/${String(i + 1).padStart(2, '0')}.txt`).then(r => {
@@ -12,12 +31,14 @@ document.addEventListener('DOMContentLoaded', async () => {
           })
         )
       );
-      img.src = `data:image/webp;base64,${parts.join('')}`;
+
+      img.onerror = useFallback;
+      img.src = `data:image/webp;base64,${parts.join('').replace(/\s+/g, '')}`;
       img.removeAttribute('data-chunk-base');
       img.removeAttribute('data-chunk-count');
     } catch (err) {
       console.error('Smilecollector image reconstruction failed:', err);
-      img.alt += ' [imagem temporariamente indisponível]';
+      useFallback();
     }
   }
 });
