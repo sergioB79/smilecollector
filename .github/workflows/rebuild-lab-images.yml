@@ -21,17 +21,19 @@ jobs:
       - name: Rebuild Cresselia image
         shell: bash
         run: |
-          cat assets/lab/cresselia-why.1.b64 assets/lab/cresselia-why.2.b64 assets/lab/cresselia-why.3.b64 \
-            | tr -d '\r\n' \
-            | base64 --decode > assets/lab/cresselia-why.webp
+          : > assets/lab/cresselia-why.webp
+          for f in assets/lab/cresselia-why.1.b64 assets/lab/cresselia-why.2.b64 assets/lab/cresselia-why.3.b64; do
+            tr -d '\r\n' < "$f" | base64 --decode >> assets/lab/cresselia-why.webp
+          done
           file assets/lab/cresselia-why.webp
 
       - name: Rebuild Vitinho image
         shell: bash
         run: |
-          cat assets/lab/chunks/vitinho/01.txt assets/lab/chunks/vitinho/02.txt assets/lab/chunks/vitinho/03.txt \
-            | tr -d '\r\n' \
-            | base64 --decode > assets/lab/vitinho-route-215.jpg
+          : > assets/lab/vitinho-route-215.jpg
+          for f in assets/lab/chunks/vitinho/01.txt assets/lab/chunks/vitinho/02.txt assets/lab/chunks/vitinho/03.txt; do
+            tr -d '\r\n' < "$f" | base64 --decode >> assets/lab/vitinho-route-215.jpg
+          done
           file assets/lab/vitinho-route-215.jpg
 
       - name: Commit rebuilt images
