@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FOUNDING NOTE #001 — Porquê Cresselia? A história por trás do símbolo do Smilecollector.">
+  <title>FOUNDING NOTE #001 — Porquê Cresselia? | Smilecollector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f6f3ea;--grid:#ddd9ce;--ink:#171922;--night:#18213c;--night2:#253157;
+      --lilac:#c9b8ff;--moon:#fff0a8;--blue:#9adcf4;--pink:#e8a9d5;--quiet:#edf1fb;
+      --hand:'Reenie Beanie',cursive;--title:'Permanent Marker',cursive;--type:'Special Elite',monospace
+    }
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{background-color:var(--paper);color:var(--ink);font-family:var(--type);line-height:1.72;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:25px 25px;padding:20px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 2rem;background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);margin:0 auto 3rem;max-width:1400px;position:sticky;top:10px;z-index:30}
+    .logo img{height:50px;border:2px solid var(--ink);transform:rotate(-2deg);display:block}nav{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:flex-end}
+    nav a,.back-btn{font-family:var(--title);text-decoration:none;color:var(--ink);background:var(--moon);padding:.28rem .65rem;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}nav a:hover,.back-btn:hover{background:var(--blue)}
+    .page{max-width:1040px;margin:0 auto 4rem}.hero{text-align:center;padding:2.4rem 1rem 1.2rem}.note-no{display:inline-block;background:var(--night);color:#fff;font-family:var(--title);padding:.3rem .8rem;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--lilac);transform:rotate(-1deg);margin-bottom:1rem}
+    .hero h1{font-family:var(--title);font-size:clamp(3rem,9vw,6rem);line-height:.92;text-transform:uppercase;text-shadow:4px 4px 0 var(--moon)}.hero .sub{font-family:var(--hand);font-size:clamp(1.65rem,3vw,2.35rem);color:#6f4ba8;margin:1rem auto;max-width:780px}.stamps{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin:1rem 0 2rem}.stamp{font-family:var(--title);font-size:.72rem;padding:.25rem .55rem;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}.founding{background:var(--lilac)}.lunar{background:var(--moon)}.repair{background:var(--blue)}
+    .article{background:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:3rem;position:relative}.article::before{content:'FOUNDING NOTE / NIGHT SHIFT';position:absolute;top:-18px;left:22px;background:var(--moon);padding:.2rem .65rem;border:2px solid var(--ink);font-family:var(--hand);font-size:1.15rem;transform:rotate(-1.5deg)}
+    .article p{font-size:1.09rem;margin-bottom:1.12rem}.article h2{font-family:var(--title);font-size:clamp(1.9rem,5vw,2.75rem);line-height:1.05;margin:2.7rem 0 .85rem;color:var(--night)}.dropcap:first-letter{font-family:var(--title);font-size:3.8rem;float:left;line-height:.72;margin:.15rem .45rem 0 0;color:#7560ad}
+    .hero-image{margin:1.8rem auto 2.5rem;background:var(--night);border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:.75rem;transform:rotate(-.2deg)}.hero-image img{display:block;width:100%;height:auto;border:5px solid #fff}.image-note{font-family:var(--hand);font-size:1.35rem;color:var(--moon);text-align:center;padding:.65rem .5rem .15rem}
+    .lunar-card{background:linear-gradient(145deg,#202a4a,#313f6c);color:#f8f8ff;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:1.4rem 1.5rem;margin:1.5rem 0}.lunar-card strong{font-family:var(--title);color:var(--moon)}.lunar-card p:last-child{margin-bottom:0}
+    .quiet-note{font-family:var(--hand);font-size:1.45rem;color:#725397;background:#f7f1ff;border:2px solid var(--ink);padding:.95rem 1.1rem;margin:1.5rem 0;transform:rotate(-.35deg)}
+    .big-quote{background:var(--night);color:#fff;border:4px solid var(--ink);box-shadow:7px 7px 0 var(--lilac);padding:2rem 1.5rem;margin:2rem 0;text-align:center;font-family:var(--title);font-size:clamp(1.8rem,5vw,3.3rem);line-height:1.15}.big-quote em{color:var(--moon);font-style:normal}
+    .small-story{background:#f5f6fc;border-left:7px solid var(--lilac);padding:1.25rem 1.4rem;margin:1.5rem 0}.small-story strong{font-family:var(--title)}
+    .dance{background:linear-gradient(145deg,#f8f1ff,#eef7ff);border:3px solid #7060a8;box-shadow:5px 5px 0 var(--ink);padding:1.4rem 1.5rem;margin:1.5rem 0}.dance h3{font-family:var(--title);font-size:1.45rem;color:#5d4b98;margin-bottom:.5rem}.dance p:last-child{margin-bottom:0}
+    .sources{background:#f1efe6;border:2px dashed #7a756a;padding:1.2rem 1.4rem;margin-top:2.5rem}.sources h3{font-family:var(--title);font-size:1.05rem}.sources ul{padding-left:1.2rem}.sources li{margin:.5rem 0;font-size:.9rem}.sources a{color:#345d92}.sources p{font-size:.86rem;color:#5d584d;margin:.8rem 0 0}
+    .signature{text-align:center;margin:2.4rem 0 1rem}.signature .tagline{font-family:var(--title);font-size:1.55rem}.signature .after{font-family:var(--hand);font-size:1.55rem;color:#6f4ba8;margin-top:.3rem}
+    .bottom-nav{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:2rem 0}footer{text-align:center;padding:3rem 1rem;font-family:var(--hand);font-size:1.5rem;background:var(--moon);border:3px solid var(--ink);max-width:1040px;margin:0 auto}footer small{display:block;font-family:var(--type);font-size:.74rem;margin-top:1rem;color:#4b463b}
+    @media(max-width:760px){header{position:relative;top:auto;flex-direction:column;padding:1rem}.article{padding:2rem 1.3rem}.article::before{font-size:.9rem;left:8px}}
+    @media(max-width:480px){body{padding:10px}nav a{font-size:.78rem}.article{padding:1.8rem 1rem}}
+  </style>
+</head>
+<body>
+<header>
+  <a class="logo" href="../index.html"><img src="../logo-smilecollector.png" alt="Smilecollector"></a>
+  <nav><a href="../lab.html#dossiers">← Voltar aos Dossiers</a><a href="../lab.html">Pokémon Lab</a><a href="../index.html">Home</a><a href="https://sergiob79.github.io/my_pkm_binder/" target="_blank" rel="noopener">Binders ↗</a></nav>
+</header>
+<main class="page">
+  <section class="hero">
+    <span class="note-no">FOUNDING NOTE #001</span>
+    <h1>Porquê Cresselia?</h1>
+    <p class="sub">A resposta curta: porque alguém tem de ficar para trás a apagar os pesadelos.</p>
+    <div class="stamps"><span class="stamp founding">FOUNDING NOTE</span><span class="stamp lunar">LUNAR POKÉMON</span><span class="stamp repair">REPAIR &gt; DAMAGE</span></div>
+  </section>
+
+  <article class="article">
+    <p class="dropcap">Quando comecei a procurar um Pokémon para representar isto tudo, havia escolhas mais óbvias.</p>
+    <p>Pikachu seria reconhecido por toda a gente.</p>
+    <p>Charizard ficava bem num logótipo.</p>
+    <p>Mewtwo dava imediatamente a impressão de que tínhamos orçamento.</p>
+    <p>Psyduck, convenhamos, representava bastante bem o departamento administrativo.</p>
+    <p>Mas havia <strong>Cresselia</strong>.</p>
+    <p>E quanto mais fui ver, pior ficou.</p>
+    <p>No bom sentido.</p>
+    <p>Porque Cresselia não é particularmente interessante pelo que destrói.</p>
+    <p><strong>É interessante pelo que deixa melhor.</strong></p>
+
+    <div class="hero-image">
+      <img src="../assets/lab/cresselia-why.webp" alt="Cresselia e Psyduck junto a um lago numa floresta iluminada pela lua crescente">
+      <div class="image-note">[ às vezes a escolha do logótipo começa por estética e acaba a explicar o projecto inteiro ]</div>
+    </div>
+
+    <h2>01 — A farmácia que passa a voar</h2>
+    <p>A Pokédex descreve Cresselia a atravessar o céu libertando partículas brilhantes das suas asas em forma de véu. Representa a lua crescente.</p>
+    <p>Já seria suficiente para justificar o logótipo.</p>
+    <p>Depois aparecem as penas.</p>
+    <p>A <strong>Lunar Feather</strong> — chamada Lunar Wing noutras traduções e contextos — é descrita como uma pena que brilha como a lua e possui o poder de dissipar pesadelos.</p>
+
+    <div class="lunar-card">
+      <strong>CLASSIFICAÇÃO NÃO SOLICITADA DO SMILECOLLECTOR</strong>
+      <p><strong>Categoria:</strong> Lunar Pokémon</p>
+      <p><strong>Peso:</strong> 85,6 kg</p>
+      <p><strong>Especialidade aparente:</strong> manutenção nocturna</p>
+      <p><strong>Modelo de negócio:</strong> inexistente</p>
+    </div>
+
+    <p>Portanto, tecnicamente, estamos perante uma espécie de <strong>farmácia nocturna de 85,6 kg que não precisa de receita médica.</strong></p>
+    <p>Não tem balcão.</p>
+    <p>Não aceita Multibanco.</p>
+    <p>Passa.</p>
+    <p>Brilha.</p>
+    <p>Deixa uma pena.</p>
+    <p>Boa noite.</p>
+
+    <h2>02 — O caso da criança que não acordava</h2>
+    <p>E depois fui ver o que acontece em Sinnoh.</p>
+    <p>Não devia ter ido ver Sinnoh.</p>
+
+    <div class="small-story">
+      <p>Em Canalave City, o filho de um marinheiro está preso num pesadelo do qual ninguém o consegue acordar.</p>
+      <p>Não há uma cidade a explodir.</p>
+      <p>Não há uma profecia.</p>
+      <p>Não é preciso reunir oito pedras cósmicas e impedir o fim do universo.</p>
+      <p><strong>O pai só quer o filho de volta.</strong></p>
+    </div>
+
+    <p>O caminho leva a <strong>Fullmoon Island</strong>.</p>
+    <p>Encontramos Cresselia. Ela parte. E no lugar onde estava fica uma Lunar Feather.</p>
+    <p>Levamo-la de volta ao rapaz.</p>
+    <p>A pena faz o que devia fazer.</p>
+    <p>Ele acorda.</p>
+    <p>É tudo.</p>
+    <p>Nenhum lendário foi derrotado.</p>
+    <p><strong>Uma criança deixou de ter medo enquanto dormia.</strong></p>
+
+    <div class="quiet-note">[ investigação interrompida durante alguns minutos por razões perfeitamente científicas ]</div>
+
+    <h2>03 — Do outro lado da água</h2>
+    <p>Fullmoon Island tem uma contraparte: <strong>Newmoon Island</strong>, associada a Darkrai.</p>
+    <p>É tentador arrumar a coisa como Bem contra Mal e ir almoçar.</p>
+    <p>Mas Pokémon nem sempre é assim tão simples, e as diferentes continuidades não tratam Cresselia e Darkrai exactamente da mesma forma.</p>
+    <p>Gosto mais da imagem pequena.</p>
+    <p>Algures no escuro há uma coisa capaz de estragar uma noite.</p>
+    <p>E algures do outro lado existe outra capaz de ajudar a pô-la novamente no sítio.</p>
+    <p><strong>Não mata o monstro debaixo da cama.</strong></p>
+    <p><strong>Acende uma luz suficientemente boa para conseguires voltar a dormir.</strong></p>
+
+    <h2>04 — E então descobri Lunar Dance</h2>
+    <p>Foi aqui que a escolha deixou de ser apenas estética.</p>
+    <p>Cresselia aprende <strong>Lunar Dance</strong>.</p>
+    <p>Quando o usa, Cresselia desmaia. O Pokémon que entra depois pode recuperar completamente o HP e o PP e ficar livre de problemas de estado.</p>
+
+    <div class="dance">
+      <h3>Tradução emocional não reconhecida pela Pokémon League</h3>
+      <p><strong>“Eu fico por aqui. Tu continua.”</strong></p>
+    </div>
+
+    <p>Há Pokémon cujo grande momento consiste em lançar meteoritos.</p>
+    <p>Cresselia tem um em que sai de cena para deixar outra pessoa inteira.</p>
+
+    <div class="big-quote">Cresselia não precisa de ganhar a batalha.<br><em>Ela é o Pokémon que aparece depois.</em></div>
+
+    <h2>05 — Portanto, porquê Cresselia?</h2>
+    <p>Não foi por ser a mais forte.</p>
+    <p>Não foi porque fosse a carta mais cara.</p>
+    <p>Nem sequer foi porque tivesse percebido isto tudo quando a escolhi.</p>
+    <p>Primeiro gostei dela.</p>
+    <p>Depois fui investigar.</p>
+    <p>E descobri que tinha escolhido um Pokémon cuja mitologia parece construída em volta de uma ideia muito simples:</p>
+    <p><strong>há coisas que passam pelo mundo e deixam dano atrás delas.</strong></p>
+    <p>Cresselia passa e deixa luz.</p>
+    <p>Uma pena.</p>
+    <p>Um sonho melhor.</p>
+    <p>Às vezes alguém acorda.</p>
+    <p>E acho que isto encaixa bastante bem num sítio chamado <strong>Smilecollector</strong>.</p>
+    <p>Estamos todos aqui a coleccionar pedaços de cartão.</p>
+    <p>Convém que pelo menos alguns deixem qualquer coisa boa quando passam.</p>
+
+    <div class="quiet-note">[ FINAL FIELD NOTE: quando a noite correu mal, traz uma luz. resolve o que consegue. e vai-se embora antes de alguém lhe pedir para preencher o formulário. ]</div>
+
+    <div class="signature">
+      <div class="tagline">Collecting smiles, one trade at a time.</div>
+      <div class="after">Agora percebo melhor o logótipo.</div>
+    </div>
+
+    <section class="sources">
+      <h3>COISAS QUE FUI CONFIRMAR DEPOIS</h3>
+      <ul>
+        <li><a href="https://www.pokemon.com/us/pokedex/cresselia" target="_blank" rel="noopener">Pokémon.com — Cresselia Pokédex</a>: Lunar Pokémon; partículas brilhantes ao voar; associação à lua crescente.</li>
+        <li><a href="https://bulbapedia.bulbagarden.net/wiki/Lunar_Feather" target="_blank" rel="noopener">Bulbapedia — Lunar Feather</a>: a pena lunar e o poder de dissipar pesadelos.</li>
+        <li><a href="https://bulbapedia.bulbagarden.net/wiki/Fullmoon_Island" target="_blank" rel="noopener">Bulbapedia — Fullmoon Island</a>: o episódio do filho de Sailor Eldritch e a relação geográfica com Newmoon Island.</li>
+        <li><a href="https://bulbapedia.bulbagarden.net/wiki/Lunar_Dance_(move)" target="_blank" rel="noopener">Bulbapedia — Lunar Dance</a>: Cresselia sai do combate para restaurar o Pokémon que entra depois.</li>
+      </ul>
+      <p>Canon confirmado em silêncio. A leitura emocional é nossa. Como deve ser.</p>
+    </section>
+  </article>
+
+  <div class="bottom-nav"><a class="back-btn" href="../lab.html#dossiers">← Voltar aos Dossiers</a><a class="back-btn" href="../index.html">Ir para a Home →</a></div>
+</main>
+<footer><p>☾ Smilecollector — algumas coisas ficam melhores à luz da lua. ☾</p><small>Projecto independente de fã. Pokémon e nomes relacionados pertencem aos respectivos titulares.</small></footer>
+</body>
+</html>
