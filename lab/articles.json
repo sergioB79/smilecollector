@@ -4,6 +4,29 @@
   "articles": [
     {
       "date": "2026-08-30",
+      "type": "EVENT BULLETIN",
+      "number": "001",
+      "slug": "toxtricity-live",
+      "url": "lab/toxtricity-live.html",
+      "title": "Concerto dos Toxtricity amanhã promete fazer disparar os disjuntores da cidade",
+      "subtitle": "Amped na guitarra, Low Key no baixo e um encore Gigantamax que oficialmente não existe",
+      "excerpt": "A comissão tentou impor um limite de decibéis. O manager perguntou quantos volts isso dava. A protecção civil já pôs os geradores de emergência a trabalhar.",
+      "canon_seed": "Amped Form produz som semelhante a guitarra eléctrica; Low Key Form soa a baixo e pode gerar 15.000 volts; Gigantamax Toxtricity pode armazenar cerca de um milhão de litros de veneno.",
+      "tags": [
+        "EVENT BULLETIN",
+        "CANON + CONSEQUÊNCIAS"
+      ],
+      "status": "GRID FAILURE: PLAUSIBLE",
+      "subjects": [
+        "Toxtricity",
+        "Amped Form",
+        "Low Key Form",
+        "Gigantamax Toxtricity"
+      ],
+      "featured": true
+    },
+    {
+      "date": "2026-08-30",
       "type": "ARCHIVE LEAK",
       "number": "001",
       "slug": "vitinho",
