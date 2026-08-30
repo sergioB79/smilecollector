@@ -5,12 +5,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     const base = img.dataset.chunkBase;
     const count = Number(img.dataset.chunkCount);
 
-    // Some older Lab pages were stored as chunked base64 while binary upload
-    // was being awkward. Keep that support, but use a normal asset whenever
-    // the reconstruction fails or the browser rejects the resulting image.
-    const fallback = img.dataset.fallbackSrc ||
-      (base && base.endsWith('/vitinho') ? '../assets/lab/vitinho-route-215.jpg' : '');
+    // Vitinho now has a normal image asset. Prefer it directly instead of
+    // reconstructing the old temporary base64 chunks.
+    if (base && base.endsWith('/vitinho')) {
+      img.src = '../assets/lab/vitinho-route-215.jpg';
+      img.removeAttribute('data-chunk-base');
+      img.removeAttribute('data-chunk-count');
+      continue;
+    }
 
+    const fallback = img.dataset.fallbackSrc || '';
     const useFallback = () => {
       if (!fallback) {
         img.alt += ' [imagem temporariamente indisponível]';
