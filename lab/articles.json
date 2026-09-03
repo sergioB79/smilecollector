@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "updated": "2026-08-30",
+  "updated": "2026-09-03",
   "articles": [
+    {
+      "date": "2026-09-03",
+      "type": "MARKET FILE",
+      "number": "001",
+      "slug": "psa-rico",
+      "url": "lab/psa-rico.html",
+      "title": "PSA acusada de fraude sob RICO",
+      "subtitle": "E agora, o que acontece às minhas cartas graduadas?",
+      "excerpt": "Uma ação civil RICO contra a PSA parece explosiva. A pergunta útil é bastante menos cinematográfica: o que muda, hoje, para quem tem slabs na coleção?",
+      "canon_seed": "Funk v. Collectors Universe, Inc. et al foi apresentado a 28 de julho de 2026 no Distrito de Maryland sob 18 U.S.C. § 1964. As acusações permanecem alegações; não existe decisão judicial de fraude.",
+      "tags": ["MARKET FILE", "REAL WORLD", "LEGAL WATCH"],
+      "status": "SLABS: STILL SLABS",
+      "subjects": ["PSA", "RICO", "Collectors", "Grading", "Slabs"],
+      "featured": true
+    },
     {
       "date": "2026-08-30",
       "type": "DOMESTIC INCIDENT",
