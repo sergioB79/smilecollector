@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "updated": "2026-09-03",
+  "updated": "2026-09-07",
   "articles": [
+    {
+      "date": "2026-09-07",
+      "type": "COLLECTOR LOG",
+      "number": "002",
+      "slug": "bucelas-cardfest",
+      "url": "lab/bucelas-cardfest.html",
+      "title": "Bucelas CardFest",
+      "subtitle": "Fui ver como era. Saí de lá convertido.",
+      "excerpt": "Primeiro Card Show: uma viagem desnecessariamente complicada, uma hora de fila ao sol, Slowpokes suficientes para uma reserva natural e uma comunidade que acabou por ser a melhor parte do dia.",
+      "canon_seed": "Collector Log: memória real da primeira visita ao Bucelas CardFest; sem extrapolação de lore.",
+      "tags": ["COLLECTOR LOG", "REAL LIFE", "CARD SHOW"],
+      "status": "GOOD VIBES: VERIFIED",
+      "subjects": ["Bucelas CardFest", "Psyduck", "Slowpoke", "Community"],
+      "featured": true
+    },
     {
       "date": "2026-09-03",
       "type": "MARKET FILE",
